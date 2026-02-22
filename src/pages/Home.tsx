@@ -19,6 +19,18 @@ export default function Home({ onNavigate }: HomeProps) {
         image={withBaseUrl('/images/torn.jpg')}
       />
 
+
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      {/* a larger welcome text */}
+      <div className="text-center text-stone-800 mb-12">
+        <h2 className="text-3xl font-serif italic mb-4">Välkommen till Nikas Guldkant</h2>
+        <p className="text-lg leading-relaxed">
+          Välkommen till Nikas Guldkant – din partner för att skapa oförglömliga fester i Hudiksvall med omnejd. <br />
+          Vi erbjuder ett handplockat sortiment av vackra produkter som hjälper dig sätta guldkant på ditt event, oavsett om det är en bröllopsfest, födelsedagskalas eller företagsevent. Med personlig service och noga utvalda detaljer gör vi det enkelt och tryggt för dig att skapa en fest som dina gäster kommer minnas. Låt oss hjälpa dig göra din nästa fest till något alldeles extra!
+        </p>
+      </div>
+      </div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
           <div className="bg-white rounded-sm border border-stone-200 p-8 text-center">
@@ -90,5 +102,6 @@ export default function Home({ onNavigate }: HomeProps) {
         />
       </div>
     </div>
+
   );
 }
