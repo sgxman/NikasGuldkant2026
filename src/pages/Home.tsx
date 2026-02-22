@@ -13,10 +13,10 @@ export default function Home({ onNavigate }: HomeProps) {
   return (
     <div>
       <Hero
-        title="Hyr det vackra till ditt event"
-        subtitle="Vi erbjuder porslin, glas, dukar och dekorationer för bröllop, fester och kalas i Hudiksvall med omnejd"
+        title=""
+        subtitle=""
         image="https://images.pexels.com/photos/1444442/pexels-photo-1444442.jpeg?auto=compress&cs=tinysrgb&w=1200"
-        showCTA={true}
+        showCTA={false}
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
