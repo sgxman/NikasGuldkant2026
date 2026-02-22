@@ -2,6 +2,7 @@ export interface Product {
   id: string;
   name: string;
   category: string;
+  subcategory: string;
   price: number;
   image: string;
   imageBase?: string;
@@ -15,6 +16,7 @@ export const products: Product[] = [
     id: '1',
     name: 'Vintage Champagneglas',
     category: 'glas',
+    subcategory: 'champagneglas',
     price: 15,
     image: 'https://images.pexels.com/photos/6937821/pexels-photo-6937821.jpeg?auto=compress&cs=tinysrgb&w=800',
     description: 'Eleganta champagneglas i vintagedesign, perfekta för festliga tillfällen.',
@@ -25,6 +27,7 @@ export const products: Product[] = [
     id: '2',
     name: 'Rustikt Stengodsporslin',
     category: 'porslin',
+    subcategory: 'tallrikar',
     price: 25,
     image: 'https://images.pexels.com/photos/6436/coffee-cup-mug-cafe.jpg?auto=compress&cs=tinysrgb&w=800',
     description: 'Handgjord stengodstallrik med naturlig finish.',
@@ -35,6 +38,7 @@ export const products: Product[] = [
     id: '3',
     name: 'Guldbestick Set',
     category: 'porslin',
+    subcategory: 'bestick',
     price: 20,
     image: 'https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg?auto=compress&cs=tinysrgb&w=800',
     description: '4-delars bestickset i guldfinish för elegant dukning.',
@@ -45,6 +49,7 @@ export const products: Product[] = [
     id: '4',
     name: 'Vintage Glaslyktor',
     category: 'belysning',
+    subcategory: 'lyktor',
     price: 30,
     image: 'https://images.pexels.com/photos/1666067/pexels-photo-1666067.jpeg?auto=compress&cs=tinysrgb&w=800',
     description: 'Charmiga glaslyktor som skapar mysig belysning.',
@@ -55,6 +60,7 @@ export const products: Product[] = [
     id: '5',
     name: 'Ljusslinga Vintage',
     category: 'belysning',
+    subcategory: 'ljusslingor',
     price: 150,
     image: 'https://images.pexels.com/photos/1444442/pexels-photo-1444442.jpeg?auto=compress&cs=tinysrgb&w=800',
     description: 'Varm ljusslinga med vintage-glödlampor.',
@@ -65,6 +71,7 @@ export const products: Product[] = [
     id: '6',
     name: 'Linnedukar Naturvit',
     category: 'dekoration',
+    subcategory: 'dukar',
     price: 80,
     image: 'https://images.pexels.com/photos/6267516/pexels-photo-6267516.jpeg?auto=compress&cs=tinysrgb&w=800',
     description: 'Vackra linnedukar i naturvit färg.',
@@ -75,6 +82,7 @@ export const products: Product[] = [
     id: '7',
     name: 'Kristallglas Vintage',
     category: 'glas',
+    subcategory: 'vinglas',
     price: 12,
     image: 'https://images.pexels.com/photos/8844851/pexels-photo-8844851.jpeg?auto=compress&cs=tinysrgb&w=800',
     description: 'Klassiska kristallglas med slipad dekor.',
@@ -85,6 +93,7 @@ export const products: Product[] = [
     id: '8',
     name: 'Keramiska Krukor',
     category: 'dekoration',
+    subcategory: 'vaser-krukor',
     price: 35,
     image: 'https://images.pexels.com/photos/6314396/pexels-photo-6314396.jpeg?auto=compress&cs=tinysrgb&w=800',
     description: 'Handgjorda keramiska krukor för blommor och växter.',

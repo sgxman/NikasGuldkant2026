@@ -42,7 +42,7 @@ export default function Footer({ onNavigate }: FooterProps) {
                 Start
               </button>
               <button onClick={() => onNavigate('sortiment')} className="block text-sm text-stone-300 hover:text-amber-500 transition-colors">
-                Priser och sortiment
+                Sortiment
               </button>
               <button onClick={() => onNavigate('sa-gar-det-till')} className="block text-sm text-stone-300 hover:text-amber-500 transition-colors">
                 Så går det till

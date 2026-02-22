@@ -12,6 +12,7 @@ interface CatalogProps {
 
 export default function Catalog({ initialCategory, onNavigate }: CatalogProps) {
   const [selectedCategory, setSelectedCategory] = useState(initialCategory || 'all');
+  const [selectedSubcategory, setSelectedSubcategory] = useState('all');
 
   const categories = [
     { id: 'all', name: 'Alla produkter' },
@@ -21,15 +22,50 @@ export default function Catalog({ initialCategory, onNavigate }: CatalogProps) {
     { id: 'dekoration', name: 'Dekoration' }
   ];
 
-  const filteredProducts = selectedCategory === 'all'
-    ? products
-    : products.filter(p => p.category === selectedCategory);
+  const subcategoriesByCategory: Record<string, { id: string; name: string }[]> = {
+    glas: [
+      { id: 'champagneglas', name: 'Champagneglas' },
+      { id: 'vinglas', name: 'Vinglas' }
+    ],
+    porslin: [
+      { id: 'tallrikar', name: 'Tallrikar' },
+      { id: 'bestick', name: 'Bestick' }
+    ],
+    belysning: [
+      { id: 'lyktor', name: 'Lyktor' },
+      { id: 'ljusslingor', name: 'Ljusslingor' }
+    ],
+    dekoration: [
+      { id: 'dukar', name: 'Dukar' },
+      { id: 'vaser-krukor', name: 'Vaser & Krukor' }
+    ]
+  };
+
+  const availableSubcategories = selectedCategory === 'all'
+    ? []
+    : subcategoriesByCategory[selectedCategory] || [];
+
+  const filteredProducts = products.filter(product => {
+    if (selectedCategory === 'all') {
+      return true;
+    }
+
+    if (product.category !== selectedCategory) {
+      return false;
+    }
+
+    if (selectedSubcategory === 'all') {
+      return true;
+    }
+
+    return product.subcategory === selectedSubcategory;
+  });
 
   return (
     <div>
       <Hero
-        title="Priser och sortiment"
-        subtitle="Upptäck vårt handplockade sortiment av vackra produkter för ditt event"
+        title="Sortiment"
+        subtitle=""
         image="https://images.pexels.com/photos/1543762/pexels-photo-1543762.jpeg?auto=compress&cs=tinysrgb&w=1200"
       />
 
@@ -39,7 +75,10 @@ export default function Catalog({ initialCategory, onNavigate }: CatalogProps) {
             {categories.map(cat => (
               <button
                 key={cat.id}
-                onClick={() => setSelectedCategory(cat.id)}
+                onClick={() => {
+                  setSelectedCategory(cat.id);
+                  setSelectedSubcategory('all');
+                }}
                 className={`px-6 py-2 rounded-full text-sm font-medium transition-colors ${
                   selectedCategory === cat.id
                     ? 'bg-amber-700 text-white'
@@ -50,6 +89,35 @@ export default function Catalog({ initialCategory, onNavigate }: CatalogProps) {
               </button>
             ))}
           </div>
+
+          {selectedCategory !== 'all' && (
+            <div className="flex flex-wrap gap-3 justify-center mt-6">
+              <button
+                onClick={() => setSelectedSubcategory('all')}
+                className={`px-5 py-2 rounded-full text-sm font-medium transition-colors ${
+                  selectedSubcategory === 'all'
+                    ? 'bg-stone-700 text-white'
+                    : 'bg-white text-stone-700 border border-stone-300 hover:border-stone-700'
+                }`}
+              >
+                Alla i kategorin
+              </button>
+
+              {availableSubcategories.map(subcat => (
+                <button
+                  key={subcat.id}
+                  onClick={() => setSelectedSubcategory(subcat.id)}
+                  className={`px-5 py-2 rounded-full text-sm font-medium transition-colors ${
+                    selectedSubcategory === subcat.id
+                      ? 'bg-stone-700 text-white'
+                      : 'bg-white text-stone-700 border border-stone-300 hover:border-stone-700'
+                  }`}
+                >
+                  {subcat.name}
+                </button>
+              ))}
+            </div>
+          )}
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">

@@ -11,7 +11,7 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
 
   const navItems = [
     { id: 'start', label: 'Start' },
-    { id: 'sortiment', label: 'Priser och sortiment' },
+    { id: 'sortiment', label: 'Sortiment' },
     { id: 'sa-gar-det-till', label: 'Så går det till' },
     { id: 'inspiration', label: 'Inspiration' },
     { id: 'kontakt', label: 'Kontakt' }
