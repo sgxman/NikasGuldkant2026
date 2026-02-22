@@ -13,10 +13,10 @@ export default function Home({ onNavigate }: HomeProps) {
   return (
     <div>
       <Hero
-        title=""
-        subtitle=""
+        title="Välkommen till Nikas Guldkant"
+        subtitle="Vi skapar magiska stunder med vackra dukning och eventdekorationer för alla tillfällen"
         image="https://images.pexels.com/photos/1444442/pexels-photo-1444442.jpeg?auto=compress&cs=tinysrgb&w=1200"
-        showCTA={false}
+        showCTA={true}
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
