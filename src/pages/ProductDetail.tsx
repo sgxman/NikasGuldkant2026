@@ -1,5 +1,7 @@
 import { ArrowLeft, ShoppingCart } from 'lucide-react';
 import { products } from '../data/products';
+import ResponsiveImage from '../components/ResponsiveImage';
+import { resolveImageSources } from '../utils/images';
 
 interface ProductDetailProps {
   productId: string;
@@ -35,10 +37,11 @@ export default function ProductDetail({ productId, onNavigate }: ProductDetailPr
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
         <div className="aspect-square overflow-hidden rounded-sm border border-stone-200">
-          <img
-            src={product.image}
+          <ResponsiveImage
+            {...resolveImageSources(product.image, product.imageBase)}
             alt={product.name}
             className="w-full h-full object-cover"
+            loading="eager"
           />
         </div>
 

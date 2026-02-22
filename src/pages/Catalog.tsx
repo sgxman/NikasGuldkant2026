@@ -2,6 +2,8 @@ import { useState } from 'react';
 import Hero from '../components/Hero';
 import { products } from '../data/products';
 import { ShoppingCart } from 'lucide-react';
+import ResponsiveImage from '../components/ResponsiveImage';
+import { resolveImageSources } from '../utils/images';
 
 interface CatalogProps {
   initialCategory?: string;
@@ -58,8 +60,8 @@ export default function Catalog({ initialCategory, onNavigate }: CatalogProps) {
               className="bg-white rounded-sm border border-stone-200 overflow-hidden hover:shadow-lg transition-all group text-left"
             >
               <div className="aspect-square overflow-hidden">
-                <img
-                  src={product.image}
+                <ResponsiveImage
+                  {...resolveImageSources(product.image, product.imageBase)}
                   alt={product.name}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />

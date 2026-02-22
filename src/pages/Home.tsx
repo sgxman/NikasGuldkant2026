@@ -4,6 +4,7 @@ import CaseCard from '../components/CaseCard';
 import CTA from '../components/CTA';
 import { Sparkles, Shield, Heart } from 'lucide-react';
 import { cases } from '../data/cases';
+import { withBaseUrl } from '../utils/images';
 
 interface HomeProps {
   onNavigate: (page: string, params?: any) => void;
@@ -13,10 +14,9 @@ export default function Home({ onNavigate }: HomeProps) {
   return (
     <div>
       <Hero
-        title="Välkommen till Nikas Guldkant"
-        subtitle="Vi skapar magiska stunder med vackra dukning och eventdekorationer för alla tillfällen"
-        image="https://images.pexels.com/photos/1444442/pexels-photo-1444442.jpeg?auto=compress&cs=tinysrgb&w=1200"
-        showCTA={true}
+        title=""
+        subtitle=""
+        image={withBaseUrl('/images/torn.jpg')}
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">

@@ -24,7 +24,7 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
           <div className="flex flex-col">
             <button
               onClick={() => onNavigate('start')}
-              className="font-serif italic text-2xl md:text-3xl text-amber-800 hover:text-amber-900 transition-colors"
+              className="font-lavishly text-2xl md:text-3xl text-amber-800 hover:text-amber-900 transition-colors"
             >
               Nikas Guldkant
             </button>

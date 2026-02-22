@@ -7,7 +7,7 @@ interface HeroProps {
   showCTA?: boolean;
 }
 
-export default function Hero({ title, subtitle, image, showCTA = true }: HeroProps) {
+export default function Hero({ title, subtitle, image, showCTA = false }: HeroProps) {
   return (
     <div className="relative h-[500px] md:h-[600px] overflow-hidden">
       <div
@@ -19,12 +19,16 @@ export default function Hero({ title, subtitle, image, showCTA = true }: HeroPro
 
       <div className="relative h-full flex items-center justify-center text-center px-4">
         <div className="max-w-3xl">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif italic text-white mb-6 leading-tight">
-            {title}
-          </h1>
-          <p className="text-lg md:text-xl text-stone-100 mb-8 leading-relaxed">
-            {subtitle}
-          </p>
+          {title && (
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-lavishly text-white mb-6 leading-tight">
+              {title}
+            </h1>
+          )}
+          {subtitle && (
+            <p className="text-lg md:text-xl text-stone-100 mb-8 leading-relaxed">
+              {subtitle}
+            </p>
+          )}
 
           {showCTA && (
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -47,7 +51,7 @@ export default function Hero({ title, subtitle, image, showCTA = true }: HeroPro
         </div>
 
         <div className="absolute bottom-8 right-4 md:bottom-12 md:right-8 lg:bottom-16 lg:right-12">
-          <h2 className="font-serif italic text-white text-5xl md:text-6xl lg:text-7xl xl:text-8xl opacity-60 pointer-events-none">
+          <h2 className="font-lavishly text-white text-5xl md:text-6xl lg:text-7xl xl:text-8xl opacity-60 pointer-events-none">
             Nikas Guldkant
           </h2>
         </div>

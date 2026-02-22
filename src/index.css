@@ -1,6 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Lavishly+Yours&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.font-lavishly {
+  font-family: 'Lavishly Yours', cursive;
+}
 
 body {
   margin: 0;
