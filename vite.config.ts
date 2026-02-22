@@ -6,5 +6,14 @@ export default defineConfig({
   server: {
     port: 5173,
     host: true
+  },
+  optimizeDeps: {
+    esbuildOptions: {
+      target: 'esnext'
+    }
+  },
+  build: {
+    target: 'esnext',
+    rollupOptions: {}
   }
 });
