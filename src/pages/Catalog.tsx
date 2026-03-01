@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Hero from '../components/Hero';
-import { products } from '../data/products';
+import { fetchCategories,productsjsonurl } from '../data/products';
 import { Tag } from 'lucide-react';
 import ResponsiveImage from '../components/ResponsiveImage';
 import { resolveImageSources } from '../utils/images';
@@ -13,33 +13,34 @@ interface CatalogProps {
 export default function Catalog({ initialCategory, onNavigate }: CatalogProps) {
   const [selectedCategory, setSelectedCategory] = useState(initialCategory || 'all');
   const [selectedSubcategory, setSelectedSubcategory] = useState('all');
+  const [categories, setCategories] = useState<{ id: string; name: string }[]>([]);
+  const [subcategoriesByCategory, setSubcategoriesByCategory] = useState<Record<string, { id: string; name: string }[]>>({}); 
+  const [products, setProducts] = useState<any[]>([]);
 
-  const categories = [
-    { id: 'all', name: 'Alla produkter' },
-    { id: 'glas', name: 'Glas & Dryck' },
-    { id: 'porslin', name: 'Porslin & Bestick' },
-    { id: 'belysning', name: 'Belysning' },
-    { id: 'dekoration', name: 'Dekoration' }
-  ];
+  useEffect(() => {
+    if (initialCategory) {
+      setSelectedCategory(initialCategory);
+    }
 
-  const subcategoriesByCategory: Record<string, { id: string; name: string }[]> = {
-    glas: [
-      { id: 'champagneglas', name: 'Champagneglas' },
-      { id: 'vinglas', name: 'Vinglas' }
-    ],
-    porslin: [
-      { id: 'tallrikar', name: 'Tallrikar' },
-      { id: 'bestick', name: 'Bestick' }
-    ],
-    belysning: [
-      { id: 'lyktor', name: 'Lyktor' },
-      { id: 'ljusslingor', name: 'Ljusslingor' }
-    ],
-    dekoration: [
-      { id: 'dukar', name: 'Dukar' },
-      { id: 'vaser-krukor', name: 'Vaser & Krukor' }
-    ]
-  };
+    fetchCategories().then(fetchedCategories => {
+      const formattedCategories = fetchedCategories.map(cat => ({ id: cat.id.toString(), name: cat.title }));
+      setCategories([{ id: 'all', name: 'Alla produkter' }, ...formattedCategories]);
+        const formattedSubcategories: Record<string, { id: string; name: string }[]> = {};
+        fetchedCategories.forEach(cat => {
+          formattedSubcategories[cat.id.toString()] = cat.subcategories.map(sub => ({ id: sub.id.toString(), name: sub.title }));
+        });
+        setSubcategoriesByCategory(formattedSubcategories);
+      });
+    });
+    
+  //initially load all products from the products.json on dropbox
+  
+  useEffect(() => {
+    fetch(productsjsonurl)
+      .then(response => response.json())
+      .then(data => setProducts(data.products));
+
+  }, []);
 
   const availableSubcategories = selectedCategory === 'all'
     ? []
@@ -50,7 +51,7 @@ export default function Catalog({ initialCategory, onNavigate }: CatalogProps) {
       return true;
     }
 
-    if (product.category !== selectedCategory) {
+    if (product.categoryName !== selectedCategory) {
       return false;
     }
 
@@ -58,7 +59,7 @@ export default function Catalog({ initialCategory, onNavigate }: CatalogProps) {
       return true;
     }
 
-    return product.subcategory === selectedSubcategory;
+    return product.subcategoryName === selectedSubcategory;
   });
 
   return (

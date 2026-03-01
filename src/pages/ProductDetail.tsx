@@ -1,7 +1,9 @@
 import { ArrowLeft } from 'lucide-react';
-import { products } from '../data/products';
+import { fetchProducts } from '../data/products';
 import ResponsiveImage from '../components/ResponsiveImage';
 import { resolveImageSources } from '../utils/images';
+import { useEffect } from 'react';
+import { useState } from 'react';
 
 interface ProductDetailProps {
   productId: string;
@@ -9,7 +11,14 @@ interface ProductDetailProps {
 }
 
 export default function ProductDetail({ productId, onNavigate }: ProductDetailProps) {
-  const product = products.find(p => p.id === productId);
+  const [product, setProduct] = useState<any | null>(null);
+
+  useEffect(() => {
+    fetchProducts().then(fetchedProducts => {
+      const foundProduct = fetchedProducts.find(p => p.id === productId);
+      setProduct(foundProduct || null);
+    });
+  }, [productId]);
 
   if (!product) {
     return (
