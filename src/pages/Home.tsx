@@ -1,8 +1,6 @@
 import Hero from '../components/Hero';
-import CategoryGrid from '../components/CategoryGrid';
 import CaseCard from '../components/CaseCard';
 import CTA from '../components/CTA';
-import { Sparkles, Shield, Heart } from 'lucide-react';
 import { cases } from '../data/cases';
 import { withBaseUrl } from '../utils/images';
 
@@ -31,50 +29,52 @@ export default function Home({ onNavigate }: HomeProps) {
       </div>
       </div>
 
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
-          <div className="bg-white rounded-sm border border-stone-200 p-8 text-center">
-            <div className="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Heart className="text-amber-800" size={24} />
+n        <section className="mb-24">
+          <div
+            className="relative h-48 md:h-64 overflow-hidden rounded-sm mb-12 cursor-pointer"
+            onClick={() => onNavigate('sortiment')}
+          >
+            <div
+              className="absolute inset-0 bg-cover bg-center"
+              style={{ backgroundImage: `url(https://images.pexels.com/photos/1543762/pexels-photo-1543762.jpeg?auto=compress&cs=tinysrgb&w=1200)` }}
+            >
+              <div className="absolute inset-0 bg-gradient-to-b from-stone-900/40 via-stone-900/30 to-stone-900/60" />
             </div>
-            <h3 className="text-lg font-medium text-stone-800 mb-3">
-              Personlig eventhjälp
-            </h3>
-            <p className="text-sm text-stone-600 leading-relaxed">
-              Vi lyssnar på dina önskemål och hjälper dig hitta rätt för just din fest.
-            </p>
+            <div className="relative h-full flex flex-col items-center justify-center text-center px-4">
+              <h2 className="text-4xl md:text-5xl font-lavishly text-white mb-3 leading-tight">
+                Sortiment
+              </h2>
+              <p className="text-stone-100 text-sm md:text-base max-w-xl">
+                Vi erbjuder ett handplockat sortiment för fester i alla storlekar – hitta rätt produkter för ditt event
+              </p>
+            </div>
           </div>
 
-          <div className="bg-white rounded-sm border border-stone-200 p-8 text-center">
-            <div className="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Sparkles className="text-amber-800" size={24} />
-            </div>
-            <h3 className="text-lg font-medium text-stone-800 mb-3">
-              Handplockat & vackert
-            </h3>
-            <p className="text-sm text-stone-600 leading-relaxed">
-              Varje detalj är noga utvald för att skapa harmoni och lantlig elegans.
-            </p>
-          </div>
-
-          <div className="bg-white rounded-sm border border-stone-200 p-8 text-center">
-            <div className="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Shield className="text-amber-800" size={24} />
-            </div>
-            <h3 className="text-lg font-medium text-stone-800 mb-3">
-              Tryggt hela vägen
-            </h3>
-            <p className="text-sm text-stone-600 leading-relaxed">
-              Vi tar hand om dig från bokning till återlämning, så du kan njuta av festen.
-            </p>
-          </div>
-        </div>
+        </section>
 
         <section className="mb-24">
-          <h2 className="text-3xl font-serif italic text-stone-800 text-center mb-12">
-            Populära kategorier
-          </h2>
-          <CategoryGrid onCategoryClick={(id) => onNavigate('sortiment', { category: id })} />
+          <div
+            className="relative h-48 md:h-64 overflow-hidden rounded-sm mb-12 cursor-pointer"
+            onClick={() => onNavigate('sa-gar-det-till')}
+          >
+            <div
+              className="absolute inset-0 bg-cover bg-center"
+              style={{ backgroundImage: `url(https://images.pexels.com/photos/1395964/pexels-photo-1395964.jpeg?auto=compress&cs=tinysrgb&w=1200)` }}
+            >
+              <div className="absolute inset-0 bg-gradient-to-b from-stone-900/40 via-stone-900/30 to-stone-900/60" />
+            </div>
+            <div className="relative h-full flex flex-col items-center justify-center text-center px-4">
+              <h2 className="text-4xl md:text-5xl font-lavishly text-white mb-3 leading-tight">
+                Så går det till
+              </h2>
+              <p className="text-stone-100 text-sm md:text-base max-w-xl">
+                Enkel uthyrning från start till mål - vi tar hand om allt praktiskt
+              </p>
+            </div>
+          </div>
+
         </section>
 
         <section className="mb-24">
