@@ -1,31 +1,6 @@
 import Hero from '../components/Hero';
-import CTA from '../components/CTA';
-import { Phone, Calendar, Truck, CheckCircle } from 'lucide-react';
 
 export default function HowItWorks() {
-  const steps = [
-    {
-      icon: Phone,
-      title: 'Kontakta oss',
-      description: 'Ring eller mejla med datum, antal gäster och önskemål. Vi återkommer snabbt med förslag och pris.'
-    },
-    {
-      icon: Calendar,
-      title: 'Boka och planera',
-      description: 'Vi bokar ditt datum och går igenom alla detaljer. Du får en bekräftelse och information om hämtning/leverans.'
-    },
-    {
-      icon: Truck,
-      title: 'Leverans eller hämtning',
-      description: 'Vi levererar eller så hämtar du själv på överenskommen tid. Allt är noggrant packat och klart för ditt event.'
-    },
-    {
-      icon: CheckCircle,
-      title: 'Njut av festen',
-      description: 'Efter evenemanget återlämnar du sakerna smutsiga - vi tar hand om disken! Enkelt och bekymmersfritt.'
-    }
-  ];
-
   return (
     <div>
       <Hero
@@ -35,29 +10,19 @@ export default function HowItWorks() {
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-24">
-          {steps.map((step, index) => {
-            const Icon = step.icon;
-            return (
-              <div key={index} className="text-center">
-                <div className="relative mb-6">
-                  <div className="w-20 h-20 bg-amber-100 rounded-full flex items-center justify-center mx-auto">
-                    <Icon className="text-amber-800" size={36} />
-                  </div>
-                  <div className="absolute top-8 left-1/2 -translate-x-1/2 -z-10 w-16 h-16 bg-amber-50 rounded-full" />
-                  <span className="absolute -top-2 -right-2 w-8 h-8 bg-amber-700 text-white rounded-full flex items-center justify-center text-sm font-bold">
-                    {index + 1}
-                  </span>
-                </div>
-                <h3 className="text-xl font-medium text-stone-800 mb-3">
-                  {step.title}
-                </h3>
-                <p className="text-sm text-stone-600 leading-relaxed">
-                  {step.description}
-                </p>
-              </div>
-            );
-          })}
+        <div className="max-w-3xl mx-auto mb-24 space-y-6 text-stone-700 text-base leading-relaxed">
+          <p>
+            Det hela börjar med ett enkelt samtal. Du ringer till Nika och berättar om din fest – vilket datum det är, hur många gäster du räknar med och vilken känsla du vill skapa. Inga konstigheter, bara ett vanligt samtal mellan människor.
+          </p>
+          <p>
+            Utifrån det du berättar bokar Nika in ett personligt möte med dig – antingen hemma hos dig, på festplatsen eller på ett annat sätt som passar. Där går ni igenom dina önskemål i lugn och ro, tittar på produkter och idéer, och sätter ihop ett upplägg som passar just din fest och budget.
+          </p>
+          <p>
+            När ni är överens bekräftas bokningen och du kan luta dig tillbaka. På överenskommen tid levererar Nika allt material noggrant packat och klart. Du slipper stressen – fokus är helt på att du ska kunna njuta av din dag.
+          </p>
+          <p>
+            Efter festen lämnar du tillbaka allt smutsigt. Nika tar hand om resten.
+          </p>
         </div>
 
         <section className="mb-24">
@@ -118,10 +83,7 @@ export default function HowItWorks() {
           </div>
         </section>
 
-        <CTA
-          title="Redo att boka?"
-          description="Kontakta oss idag så hjälper vi dig skapa en minnesvärd fest"
-        />
+
       </div>
     </div>
   );
