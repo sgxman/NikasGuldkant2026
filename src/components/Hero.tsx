@@ -9,7 +9,7 @@ interface HeroProps {
 
 export default function Hero({ title, subtitle, image, showCTA = false }: HeroProps) {
   return (
-    <div className="relative h-[500px] md:h-[600px] overflow-hidden">
+    <div className="relative w-full aspect-[16/5] overflow-hidden">
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: `url(${image})` }}
