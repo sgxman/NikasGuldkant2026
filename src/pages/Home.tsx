@@ -30,7 +30,7 @@ export default function Home({ onNavigate }: HomeProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <section className="mb-24">
           <div
-            className="relative w-full aspect-[16/5] overflow-hidden rounded-sm cursor-pointer"
+            className="relative w-full aspect-[8/5] md:aspect-[16/5] overflow-hidden rounded-sm cursor-pointer"
             onClick={() => onNavigate('sortiment')}
           >
             <div
@@ -56,7 +56,7 @@ export default function Home({ onNavigate }: HomeProps) {
 
         <section className="mb-8">
           <div
-            className="relative w-full aspect-[16/5] overflow-hidden rounded-sm cursor-pointer"
+            className="relative w-full aspect-[8/5] md:aspect-[16/5] overflow-hidden rounded-sm cursor-pointer"
             onClick={() => onNavigate('sa-gar-det-till')}
           >
             <div
@@ -83,7 +83,7 @@ export default function Home({ onNavigate }: HomeProps) {
 
         <section className="mb-8">
           <div
-            className="relative w-full aspect-[16/5] overflow-hidden rounded-sm cursor-pointer"
+            className="relative w-full aspect-[8/5] md:aspect-[16/5] overflow-hidden rounded-sm cursor-pointer"
             onClick={() => onNavigate('inspiration')}
           >
             <div
