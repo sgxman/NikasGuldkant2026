@@ -1,4 +1,4 @@
-import { Phone, Mail } from 'lucide-react';
+import { PhoneCall, Send } from 'lucide-react';
 
 interface HeroProps {
   title: string;
@@ -36,14 +36,14 @@ export default function Hero({ title, subtitle, image, showCTA = false }: HeroPr
                 href="tel:+46701234567"
                 className="inline-flex items-center justify-center px-8 py-3 bg-amber-700 text-white font-medium rounded-sm hover:bg-amber-800 transition-colors"
               >
-                <Phone size={18} className="mr-2" />
+                <PhoneCall size={18} className="mr-2" />
                 Ring och boka
               </a>
               <a
                 href="mailto:info@nikasguldkant.se"
                 className="inline-flex items-center justify-center px-8 py-3 bg-white text-stone-800 font-medium rounded-sm hover:bg-stone-50 transition-colors"
               >
-                <Mail size={18} className="mr-2" />
+                <Send size={18} className="mr-2" />
                 Maila för offert
               </a>
             </div>

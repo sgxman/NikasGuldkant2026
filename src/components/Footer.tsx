@@ -1,4 +1,4 @@
-import { Phone, Mail, MapPin } from 'lucide-react';
+import { PhoneCall, Send, MapPin } from 'lucide-react';
 
 interface FooterProps {
   onNavigate: (page: string) => void;
@@ -12,20 +12,20 @@ export default function Footer({ onNavigate }: FooterProps) {
           <div>
             <h3 className="font-serif italic text-2xl text-amber-500 mb-4">Nikas Guldkant</h3>
             <p className="text-sm text-stone-300 leading-relaxed">
-              Vi hyr ut vackra detaljer för ditt event i Hudiksvall och omnejd.
-              Skapa minnesvärda stunder med lantlig elegans.
+              Uthyrning av porslin, glas och bestick för alla typer av tillställningar. 
+              Vi finns i Hudiksvall med omnejd.
             </p>
           </div>
 
           <div>
             <h4 className="font-medium text-white mb-4">Kontakt</h4>
             <div className="space-y-3">
-              <a href="tel:+46701234567" className="flex items-center text-sm text-stone-300 hover:text-amber-500 transition-colors">
-                <Phone size={16} className="mr-2" />
-                070-123 45 67
+              <a href="tel:+46730207511" className="flex items-center text-sm text-stone-300 hover:text-amber-500 transition-colors">
+                <PhoneCall size={16} className="mr-2" />
+                073-020 75 11
               </a>
               <a href="mailto:info@nikasguldkant.se" className="flex items-center text-sm text-stone-300 hover:text-amber-500 transition-colors">
-                <Mail size={16} className="mr-2" />
+                <Send size={16} className="mr-2" />
                 info@nikasguldkant.se
               </a>
               <div className="flex items-start text-sm text-stone-300">

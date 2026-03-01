@@ -1,4 +1,4 @@
-import { Wine, Utensils, Lamp, Flower } from 'lucide-react';
+import { GlassWater, Utensils, Flame, Flower } from 'lucide-react';
 
 interface CategoryGridProps {
   onCategoryClick: (categoryId: string) => void;
@@ -9,7 +9,7 @@ export default function CategoryGrid({ onCategoryClick }: CategoryGridProps) {
     {
       id: 'glas',
       name: 'Glas & Dryck',
-      icon: Wine,
+      icon: GlassWater,
       description: 'Vackra glas för alla tillfällen'
     },
     {
@@ -21,7 +21,7 @@ export default function CategoryGrid({ onCategoryClick }: CategoryGridProps) {
     {
       id: 'belysning',
       name: 'Belysning',
-      icon: Lamp,
+      icon: Flame,
       description: 'Skapa rätt stämning'
     },
     {
@@ -42,9 +42,7 @@ export default function CategoryGrid({ onCategoryClick }: CategoryGridProps) {
             onClick={() => onCategoryClick(category.id)}
             className="bg-white rounded-sm border border-stone-200 p-6 text-center hover:shadow-lg hover:border-amber-300 transition-all group"
           >
-            <div className="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-amber-200 transition-colors">
-              <Icon className="text-amber-800" size={32} />
-            </div>
+            <Icon className="text-amber-700 mx-auto mb-5" size={36} />
             <h3 className="text-lg font-medium text-stone-800 mb-2">
               {category.name}
             </h3>

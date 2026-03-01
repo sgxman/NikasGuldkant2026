@@ -11,7 +11,7 @@ export default function Inspiration({ onNavigate }: InspirationProps) {
     <div>
       <Hero
         title="Inspiration"
-        subtitle="Se hur vi hjälpt andra skapa minnesvärda tillfällen med våra produkter"
+        subtitle=""
         image="https://images.pexels.com/photos/2306281/pexels-photo-2306281.jpeg?auto=compress&cs=tinysrgb&w=1200"
       />
 

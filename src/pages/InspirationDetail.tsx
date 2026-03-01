@@ -1,4 +1,4 @@
-import { ArrowLeft, Calendar, Users } from 'lucide-react';
+import { ArrowLeft, Tag, Users } from 'lucide-react';
 import { cases } from '../data/cases';
 
 interface InspirationDetailProps {
@@ -39,7 +39,7 @@ export default function InspirationDetail({ caseId, onNavigate }: InspirationDet
         </h1>
         <div className="flex items-center gap-6 text-stone-600">
           <span className="flex items-center">
-            <Calendar size={18} className="mr-2" />
+            <Tag size={18} className="mr-2" />
             {case_.type}
           </span>
           <span className="flex items-center">

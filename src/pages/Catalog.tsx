@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Hero from '../components/Hero';
 import { products } from '../data/products';
-import { ShoppingCart } from 'lucide-react';
+import { Tag } from 'lucide-react';
 import ResponsiveImage from '../components/ResponsiveImage';
 import { resolveImageSources } from '../utils/images';
 
@@ -155,7 +155,7 @@ export default function Catalog({ initialCategory, onNavigate }: CatalogProps) {
         </div>
 
         <div className="mt-16 bg-gradient-to-br from-amber-50 to-stone-100 rounded-sm border border-stone-200 p-8 text-center">
-          <ShoppingCart className="w-12 h-12 text-amber-800 mx-auto mb-4" />
+          <Tag className="w-12 h-12 text-amber-800 mx-auto mb-4" />
           <h3 className="text-2xl font-serif italic text-stone-800 mb-4">
             Minsta beställning 500 kr
           </h3>

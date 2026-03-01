@@ -1,4 +1,4 @@
-import { ArrowLeft, ShoppingCart } from 'lucide-react';
+import { ArrowLeft, Tag } from 'lucide-react';
 import { products } from '../data/products';
 import ResponsiveImage from '../components/ResponsiveImage';
 import { resolveImageSources } from '../utils/images';
@@ -75,7 +75,7 @@ export default function ProductDetail({ productId, onNavigate }: ProductDetailPr
 
           <div className="bg-gradient-to-br from-amber-50 to-stone-100 rounded-sm border border-stone-200 p-6">
             <div className="flex items-start mb-4">
-              <ShoppingCart className="text-amber-800 mr-3 mt-1 flex-shrink-0" size={24} />
+              <Tag className="text-amber-800 mr-3 mt-1 flex-shrink-0" size={24} />
               <div>
                 <h3 className="font-medium text-stone-800 mb-2">
                   Intresserad av att hyra?

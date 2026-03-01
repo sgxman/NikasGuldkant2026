@@ -1,4 +1,4 @@
-import { Calendar, Users } from 'lucide-react';
+import { Tag, Users } from 'lucide-react';
 
 interface Case {
   id: string;
@@ -33,7 +33,7 @@ export default function CaseCard({ case_, onClick }: CaseCardProps) {
         </h3>
         <div className="flex items-center gap-4 text-sm text-stone-600 mb-3">
           <span className="flex items-center">
-            <Calendar size={16} className="mr-1" />
+            <Tag size={16} className="mr-1" />
             {case_.type}
           </span>
           <span className="flex items-center">
