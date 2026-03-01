@@ -25,21 +25,19 @@ export default function Catalog({ initialCategory, onNavigate }: CatalogProps) {
     fetchCategories().then(fetchedCategories => {
       const formattedCategories = fetchedCategories.map(cat => ({ id: cat.id.toString(), name: cat.title }));
       setCategories([{ id: 'all', name: 'Alla produkter' }, ...formattedCategories]);
-        const formattedSubcategories: Record<string, { id: string; name: string }[]> = {};
-        fetchedCategories.forEach(cat => {
-          formattedSubcategories[cat.id.toString()] = cat.subcategories.map(sub => ({ id: sub.id.toString(), name: sub.title }));
-        });
-        setSubcategoriesByCategory(formattedSubcategories);
+      const formattedSubcategories: Record<string, { id: string; name: string }[]> = {};
+      fetchedCategories.forEach(cat => {
+        formattedSubcategories[cat.id.toString()] = cat.subcategories.map(sub => ({ id: sub.id.toString(), name: sub.title }));
       });
+      setSubcategoriesByCategory(formattedSubcategories);
     });
+  }, [initialCategory]);
     
   //initially load all products from the products.json on dropbox
-  
   useEffect(() => {
     fetch(productsjsonurl)
       .then(response => response.json())
       .then(data => setProducts(data.products));
-
   }, []);
 
   const availableSubcategories = selectedCategory === 'all'

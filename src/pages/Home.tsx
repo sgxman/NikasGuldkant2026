@@ -1,17 +1,18 @@
 import Hero from '../components/Hero';
-import { withBaseUrl } from '../utils/images';
+import { resolveImageSources} from '../utils/images';
 
 interface HomeProps {
   onNavigate: (page: string, params?: any) => void;
 }
 
 export default function Home({ onNavigate }: HomeProps) {
+  let img = resolveImageSources('torn2.webp','torn2');
   return (
     <div>
       <Hero
         title=""
         subtitle=""
-        image={withBaseUrl('/images/torn.jpg')}
+        image={img.src}
       />
 
 

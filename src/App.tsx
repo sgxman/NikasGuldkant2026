@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -19,12 +19,28 @@ interface NavigationParams {
 function App() {
   const [currentPage, setCurrentPage] = useState<PageType>('start');
   const [navigationParams, setNavigationParams] = useState<NavigationParams>({});
+  const scrollPositions = useRef<Record<string, number>>({});
 
   const handleNavigate = (page: string, params?: NavigationParams) => {
+    // Spara nuvarande scroll-position
+    scrollPositions.current[currentPage] = window.scrollY;
+    
     setCurrentPage(page as PageType);
     setNavigationParams(params || {});
-    window.scrollTo(0, 0);
   };
+
+  // Återställ scroll-position när sidan ändras
+  useEffect(() => {
+    const savedPosition = scrollPositions.current[currentPage];
+    if (savedPosition !== undefined) {
+      // Vänta en frame så att innehållet hinner renderas
+      requestAnimationFrame(() => {
+        window.scrollTo(0, savedPosition);
+      });
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }, [currentPage]);
 
   const renderPage = () => {
     switch (currentPage) {

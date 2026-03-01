@@ -1,4 +1,4 @@
-const DEFAULT_WIDTHS = [320, 640, 960, 1280];
+const DEFAULT_WIDTHS = [400, 800, 1600];
 
 interface StaticImageSetOptions {
   widths?: number[];
@@ -21,33 +21,42 @@ function normalizePath(path: string): string {
   if (path.startsWith('/')) {
     return path;
   }
-  return `/${path}`;
+  return `/images/${path}`;
 }
 
 export function withBaseUrl(path: string): string {
+  let res = "";
   if (isExternalUrl(path)) {
-    return path;
+    res = path;
   }
 
   const normalizedPath = normalizePath(path);
   const base = import.meta.env.BASE_URL;
 
+  if (res) {
+    return res;
+  }
   if (base === '/') {
-    return normalizedPath;
+    res = normalizedPath;
   }
 
-  return `${base.replace(/\/$/, '')}${normalizedPath}`;
+  if (res) {
+    return res;
+  }
+  res = `${base.replace(/\/$/, '')}${normalizedPath}`;
+  return res;
 }
 
 export function createStaticImageSet(baseName: string, options: StaticImageSetOptions = {}): ImageSources {
   const widths = options.widths ?? DEFAULT_WIDTHS;
   const format = options.format ?? 'webp';
-  const defaultWidth = options.defaultWidth ?? 640;
+  const defaultWidth = options.defaultWidth ?? 400;
   const sizes = options.sizes ?? '(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw';
 
-  const src = withBaseUrl(`/images/${baseName}-${defaultWidth}.${format}`);
+  //WITH BASEURL
+  const src = withBaseUrl(`/images/webp-${defaultWidth}/${baseName}.${format}`);
   const srcSet = widths
-    .map((width) => `${withBaseUrl(`/images/${baseName}-${width}.${format}`)} ${width}w`)
+    .map((width) => `${withBaseUrl(`/images/webp-${width}/${baseName}.${format}`)} ${width}w`)
     .join(', ');
 
   return { src, srcSet, sizes };
