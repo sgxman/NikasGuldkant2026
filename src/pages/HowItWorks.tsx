@@ -30,7 +30,7 @@ export default function HowItWorks() {
     <div>
       <Hero
         title="Så går det till"
-        subtitle="Enkel uthyrning från start till mål - vi tar hand om allt praktiskt"
+        subtitle=""
         image="https://images.pexels.com/photos/1395964/pexels-photo-1395964.jpeg?auto=compress&cs=tinysrgb&w=1200"
       />
 

@@ -1,5 +1,4 @@
 import Hero from '../components/Hero';
-import CTA from '../components/CTA';
 import { withBaseUrl } from '../utils/images';
 
 interface HomeProps {
