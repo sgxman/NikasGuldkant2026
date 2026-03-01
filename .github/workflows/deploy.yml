@@ -32,6 +32,10 @@ jobs:
 
       - name: Build
         run: npm run build
+        env:
+          VITE_CONTACT_PHONE: ${{ secrets.VITE_CONTACT_PHONE }}
+          VITE_CONTACT_PHONE_SWE: ${{ secrets.VITE_CONTACT_PHONE_SWE }}
+          VITE_CONTACT_EMAIL: ${{ secrets.VITE_CONTACT_EMAIL }}
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
