@@ -48,7 +48,8 @@ export default function Home({ onNavigate }: HomeProps) {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
             <div className="text-center text-stone-800 mb-12">
               <p className="text-lg leading-relaxed">
-                Oavsett om du planerar en intim sammankomst eller en storslagen fest, så har vi allt du behöver för att göra ditt event oförglömligt. Utforska vårt sortiment av vackra produkter och låt dig inspireras av våra idéer för att skapa den perfekta festen. Vi ser fram emot att hjälpa dig sätta guldkant på ditt nästa event!
+                Oavsett om du planerar ett litet event eller en storslagen fest kan det behövas saker.<br />
+                Kika in på vad som finns att hyra och fundera på vad just du behöver.
               </p>
             </div>
           </div>
@@ -74,7 +75,8 @@ export default function Home({ onNavigate }: HomeProps) {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
             <div className="text-center text-stone-800 mb-12">
               <p className="text-lg leading-relaxed">
-                Oavsett om du planerar en intim sammankomst eller en storslagen fest, så har vi allt du behöver för att göra ditt event oförglömligt. Utforska vårt sortiment av vackra produkter och låt dig inspireras av våra idéer för att skapa den perfekta festen. Vi ser fram emot att hjälpa dig sätta guldkant på ditt nästa event!
+                Du har kollat sortimentet och har en ide på vad du behöver. Det här är vad som sker när du kontaktar mej samt svaren på de flesta frågor.
+
               </p>
             </div>
           </div>
@@ -101,7 +103,8 @@ export default function Home({ onNavigate }: HomeProps) {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
             <div className="text-center text-stone-800 mb-12">
               <p className="text-lg leading-relaxed">
-                Oavsett om du planerar en intim sammankomst eller en storslagen fest, så har vi allt du behöver för att göra ditt event oförglömligt. Utforska vårt sortiment av vackra produkter och låt dig inspireras av våra idéer för att skapa den perfekta festen. Vi ser fram emot att hjälpa dig sätta guldkant på ditt nästa event!
+                Ingen fest är den andra lik, charmen är att göra den personlig. <br />
+                Med det sagt, ibland är det skönt att få lite inspiration.
               </p>
             </div>
           </div>
