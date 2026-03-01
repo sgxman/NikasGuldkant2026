@@ -11,7 +11,7 @@ export default function Hero({ title, subtitle, image, showCTA = false }: HeroPr
   return (
     <div className="relative w-full aspect-[8/5] md:aspect-[16/5] overflow-hidden">
       <div
-        className="absolute inset-0 bg-cover bg-center"
+        className="absolute inset-0 bg-cover bg-top"
         style={{ backgroundImage: `url(${image})` }}
       >
         <div className="absolute inset-0 bg-gradient-to-b from-stone-900/40 via-stone-900/30 to-stone-900/60" />
