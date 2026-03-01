@@ -31,7 +31,7 @@ export default function Home({ onNavigate }: HomeProps) {
 
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-n        <section className="mb-24">
+        <section className="mb-24">
           <div
             className="relative h-48 md:h-64 overflow-hidden rounded-sm mb-12 cursor-pointer"
             onClick={() => onNavigate('sortiment')}
@@ -43,12 +43,9 @@ n        <section className="mb-24">
               <div className="absolute inset-0 bg-gradient-to-b from-stone-900/40 via-stone-900/30 to-stone-900/60" />
             </div>
             <div className="relative h-full flex flex-col items-center justify-center text-center px-4">
-              <h2 className="text-4xl md:text-5xl font-lavishly text-white mb-3 leading-tight">
+              <h2 className="text-5xl md:text-7xl font-lavishly text-white mb-3 leading-tight">
                 Sortiment
               </h2>
-              <p className="text-stone-100 text-sm md:text-base max-w-xl">
-                Vi erbjuder ett handplockat sortiment för fester i alla storlekar – hitta rätt produkter för ditt event
-              </p>
             </div>
           </div>
 
@@ -66,19 +63,16 @@ n        <section className="mb-24">
               <div className="absolute inset-0 bg-gradient-to-b from-stone-900/40 via-stone-900/30 to-stone-900/60" />
             </div>
             <div className="relative h-full flex flex-col items-center justify-center text-center px-4">
-              <h2 className="text-4xl md:text-5xl font-lavishly text-white mb-3 leading-tight">
+              <h2 className="text-5xl md:text-7xl font-lavishly text-white mb-3 leading-tight">
                 Så går det till
               </h2>
-              <p className="text-stone-100 text-sm md:text-base max-w-xl">
-                Enkel uthyrning från start till mål - vi tar hand om allt praktiskt
-              </p>
             </div>
           </div>
 
         </section>
 
         <section className="mb-24">
-          <h2 className="text-3xl font-serif italic text-stone-800 text-center mb-4">
+          <h2 className="text-3xl md:text-4xl font-serif italic text-stone-800 text-center mb-4">
             Inspiration från tidigare fester
           </h2>
           <p className="text-center text-stone-600 mb-12 max-w-2xl mx-auto">
