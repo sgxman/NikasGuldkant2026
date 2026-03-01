@@ -23,11 +23,11 @@ export default function Catalog({ initialCategory, onNavigate }: CatalogProps) {
     }
 
     fetchCategories().then(fetchedCategories => {
-      const formattedCategories = fetchedCategories.map(cat => ({ id: cat.id.toString(), name: cat.title }));
+      const formattedCategories = fetchedCategories.map(cat => ({ id: cat.name, name: cat.title }));
       setCategories([{ id: 'all', name: 'Alla produkter' }, ...formattedCategories]);
       const formattedSubcategories: Record<string, { id: string; name: string }[]> = {};
       fetchedCategories.forEach(cat => {
-        formattedSubcategories[cat.id.toString()] = cat.subcategories.map(sub => ({ id: sub.id.toString(), name: sub.title }));
+        formattedSubcategories[cat.name] = cat.subcategories.map(sub => ({ id: sub.name, name: sub.title }));
       });
       setSubcategoriesByCategory(formattedSubcategories);
     });
