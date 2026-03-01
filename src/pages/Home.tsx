@@ -1,7 +1,5 @@
 import Hero from '../components/Hero';
-import CaseCard from '../components/CaseCard';
 import CTA from '../components/CTA';
-import { cases } from '../data/cases';
 import { withBaseUrl } from '../utils/images';
 
 interface HomeProps {
@@ -27,13 +25,13 @@ export default function Home({ onNavigate }: HomeProps) {
           Vi erbjuder ett handplockat sortiment av vackra produkter som hjälper dig sätta guldkant på ditt event, oavsett om det är en bröllopsfest, födelsedagskalas eller företagsevent. Med personlig service och noga utvalda detaljer gör vi det enkelt och tryggt för dig att skapa en fest som dina gäster kommer minnas. Låt oss hjälpa dig göra din nästa fest till något alldeles extra!
         </p>
       </div>
-      </div>
+    </div>
 
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <section className="mb-24">
           <div
-            className="relative h-48 md:h-64 overflow-hidden rounded-sm mb-12 cursor-pointer"
+            className="relative h-48 md:h-64 overflow-hidden rounded-sm cursor-pointer"
             onClick={() => onNavigate('sortiment')}
           >
             <div
@@ -48,12 +46,18 @@ export default function Home({ onNavigate }: HomeProps) {
               </h2>
             </div>
           </div>
-
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
+            <div className="text-center text-stone-800 mb-12">
+              <p className="text-lg leading-relaxed">
+                Oavsett om du planerar en intim sammankomst eller en storslagen fest, så har vi allt du behöver för att göra ditt event oförglömligt. Utforska vårt sortiment av vackra produkter och låt dig inspireras av våra idéer för att skapa den perfekta festen. Vi ser fram emot att hjälpa dig sätta guldkant på ditt nästa event!
+              </p>
+            </div>
+          </div>
         </section>
 
-        <section className="mb-24">
+        <section className="mb-8">
           <div
-            className="relative h-48 md:h-64 overflow-hidden rounded-sm mb-12 cursor-pointer"
+            className="relative h-48 md:h-64 overflow-hidden rounded-sm cursor-pointer"
             onClick={() => onNavigate('sa-gar-det-till')}
           >
             <div
@@ -68,32 +72,41 @@ export default function Home({ onNavigate }: HomeProps) {
               </h2>
             </div>
           </div>
-
-        </section>
-
-        <section className="mb-24">
-          <h2 className="text-3xl md:text-4xl font-serif italic text-stone-800 text-center mb-4">
-            Inspiration från tidigare fester
-          </h2>
-          <p className="text-center text-stone-600 mb-12 max-w-2xl mx-auto">
-            Se hur vi hjälpt andra skapa minnesvärda tillfällen
-          </p>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {cases.map(case_ => (
-              <CaseCard
-                key={case_.id}
-                case_={case_}
-                onClick={() => onNavigate('inspiration-detail', { id: case_.id })}
-              />
-            ))}
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
+            <div className="text-center text-stone-800 mb-12">
+              <p className="text-lg leading-relaxed">
+                Oavsett om du planerar en intim sammankomst eller en storslagen fest, så har vi allt du behöver för att göra ditt event oförglömligt. Utforska vårt sortiment av vackra produkter och låt dig inspireras av våra idéer för att skapa den perfekta festen. Vi ser fram emot att hjälpa dig sätta guldkant på ditt nästa event!
+              </p>
+            </div>
           </div>
         </section>
 
-        <CTA
-          title="Säg datum och antal gäster"
-          description="Vi återkommer med förslag anpassat efter din fest och budget. Enkelt, tryggt och vackert."
-        />
+
+        <section className="mb-8">
+          <div
+            className="relative h-48 md:h-64 overflow-hidden rounded-sm cursor-pointer"
+            onClick={() => onNavigate('inspiration')}
+          >
+            <div
+              className="absolute inset-0 bg-cover bg-center"
+              style={{ backgroundImage: `url(https://images.pexels.com/photos/169198/pexels-photo-169198.jpeg?auto=compress&cs=tinysrgb&w=1200)` }}
+            >
+              <div className="absolute inset-0 bg-gradient-to-b from-stone-900/40 via-stone-900/30 to-stone-900/60" />
+            </div>
+            <div className="relative h-full flex flex-col items-center justify-center text-center px-4">
+              <h2 className="text-5xl md:text-7xl font-lavishly text-white mb-3 leading-tight">
+                Inspiration
+              </h2>
+            </div>
+          </div>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
+            <div className="text-center text-stone-800 mb-12">
+              <p className="text-lg leading-relaxed">
+                Oavsett om du planerar en intim sammankomst eller en storslagen fest, så har vi allt du behöver för att göra ditt event oförglömligt. Utforska vårt sortiment av vackra produkter och låt dig inspireras av våra idéer för att skapa den perfekta festen. Vi ser fram emot att hjälpa dig sätta guldkant på ditt nästa event!
+              </p>
+            </div>
+          </div>
+        </section>
       </div>
     </div>
 
