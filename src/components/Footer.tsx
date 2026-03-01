@@ -5,6 +5,11 @@ interface FooterProps {
 }
 
 export default function Footer({ onNavigate }: FooterProps) {
+
+  const contactPhone = import.meta.env.VITE_CONTACT_PHONE;
+  const contactPhoneSWE = import.meta.env.VITE_CONTACT_PHONE_SWE;
+  const contactEmail = import.meta.env.VITE_CONTACT_EMAIL;
+
   return (
     <footer className="bg-stone-800 text-stone-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -20,13 +25,13 @@ export default function Footer({ onNavigate }: FooterProps) {
           <div>
             <h4 className="font-medium text-white mb-4">Kontakt</h4>
             <div className="space-y-3">
-              <a href="tel:+46730207511" className="flex items-center text-sm text-stone-300 hover:text-amber-500 transition-colors">
+              <a href={`tel:${contactPhone}`} className="flex items-center text-sm text-stone-300 hover:text-amber-500 transition-colors">
                 <PhoneCall size={16} className="mr-2" />
-                073-020 75 11
+                {contactPhoneSWE}
               </a>
-              <a href="mailto:info@nikasguldkant.se" className="flex items-center text-sm text-stone-300 hover:text-amber-500 transition-colors">
+              <a href={`mailto:${contactEmail}`} className="flex items-center text-sm text-stone-300 hover:text-amber-500 transition-colors">
                 <Send size={16} className="mr-2" />
-                info@nikasguldkant.se
+                {contactEmail}
               </a>
               <div className="flex items-start text-sm text-stone-300">
                 <MapPin size={16} className="mr-2 mt-1 flex-shrink-0" />

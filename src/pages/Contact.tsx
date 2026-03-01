@@ -2,6 +2,12 @@ import Hero from '../components/Hero';
 import { PhoneCall, Send, MapPin, CalendarClock } from 'lucide-react';
 
 export default function Contact() {
+
+  const contactPhone = import.meta.env.VITE_CONTACT_PHONE;
+  const contactPhoneSWE = import.meta.env.VITE_CONTACT_PHONE_SWE;
+  const contactEmail = import.meta.env.VITE_CONTACT_EMAIL;
+
+
   return (
     <div>
       <Hero
@@ -22,8 +28,8 @@ export default function Contact() {
                 <PhoneCall className="text-amber-700 flex-shrink-0 mt-1" size={20} />
                 <div className="ml-4">
                   <h3 className="font-medium text-stone-800 mb-1">Telefon</h3>
-                  <a href="tel:+46730207511" className="text-stone-600 hover:text-amber-800 transition-colors">
-                    073-020 75 11
+                  <a href={`tel:${contactPhone}`} className="text-stone-600 hover:text-amber-800 transition-colors">
+                    {contactPhoneSWE}
                   </a>
                   <p className="text-sm text-stone-500 mt-1">
                     Ring för snabb kontakt och bokning
@@ -35,8 +41,8 @@ export default function Contact() {
                 <Send className="text-amber-700 flex-shrink-0 mt-1" size={20} />
                 <div className="ml-4">
                   <h3 className="font-medium text-stone-800 mb-1">E-post</h3>
-                  <a href="mailto:info@nikasguldkant.se" className="text-stone-600 hover:text-amber-800 transition-colors">
-                    info@nikasguldkant.se
+                  <a href={`mailto:${contactEmail}`} className="text-stone-600 hover:text-amber-800 transition-colors">
+                    {contactEmail}
                   </a>
                 </div>
               </div>
