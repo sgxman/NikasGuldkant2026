@@ -12,16 +12,18 @@ export default function HowItWorks() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="max-w-3xl mx-auto mb-24 space-y-6 text-stone-700 text-base leading-relaxed">
           <p>
-            Det hela börjar med ett enkelt samtal. Du ringer till Nika och berättar om din fest – vilket datum det är, hur många gäster du räknar med och vilken känsla du vill skapa. Inga konstigheter, bara ett vanligt samtal mellan människor.
+            Det hela börjar med ett enkelt samtal. Du ringer till mej och berättar om din fest – vilket datum det är, hur många gäster du räknar med och vilken känsla du vill skapa. Inga konstigheter, bara ett vanligt samtal mellan människor.
           </p>
           <p>
-            Utifrån det du berättar bokar Nika in ett personligt möte med dig – antingen hemma hos dig, på festplatsen eller på ett annat sätt som passar. Där går ni igenom dina önskemål i lugn och ro, tittar på produkter och idéer, och sätter ihop ett upplägg som passar just din fest och budget.
+            Tillsammans pratar vi igenom vad just du behöver. För en del är det bara extra skumpaglas till minglet, andra behöver allt från dukar till fullt kuvert. Då jag har många olika fester med i bagaget kan jag även ge tips och trix på vad som är smidigt och praktiskt och vad som är onödigt och kan skalas bort. Huvudsaken är att du känner att det är tryggt och att just din vision kommer fram. 
+
           </p>
           <p>
-            När ni är överens bekräftas bokningen och du kan luta dig tillbaka. På överenskommen tid levererar Nika allt material noggrant packat och klart. Du slipper stressen – fokus är helt på att du ska kunna njuta av din dag.
+            När vi är överens skickar jag en sammanställning av din bokning som du beräftar och sen kan luta dig tillbaka. När ert osadatum passerat stämmer vi av igen så antalen stämmer med bokningen. Självklart kan vi längs vägen ändra, lägga till eller ta bort saker. Det är bara att höra av sig. Någon dag innan tillställningen, beroende på vad vi bestämt, hämtar du upp eller så levererar jag allt material noggrant packat till festplatsen eller hem till er.
           </p>
           <p>
-            Efter festen lämnar du tillbaka allt smutsigt. Nika tar hand om resten.
+            Efter festen packas allt ihop och du lämnar tillbaka allt odiskat och smutsigt. Jag kommer och hämtar upp på den tid vi kommit överens om och sen behöver ni inte tänka mer på det. Det ska vara smidigt, det ska vara enkelt och du ska kunna fokusera helt på att njuta av din fest.
+
           </p>
         </div>
 
