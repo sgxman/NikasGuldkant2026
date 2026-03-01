@@ -73,35 +73,6 @@ export default function ProductDetail({ productId, onNavigate }: ProductDetailPr
             </p>
           </div>
 
-          <div className="bg-gradient-to-br from-amber-50 to-stone-100 rounded-sm border border-stone-200 p-6">
-            <div className="flex items-start mb-4">
-              <Tag className="text-amber-800 mr-3 mt-1 flex-shrink-0" size={24} />
-              <div>
-                <h3 className="font-medium text-stone-800 mb-2">
-                  Intresserad av att hyra?
-                </h3>
-                <p className="text-sm text-stone-600 mb-4">
-                  Kontakta oss för att boka denna produkt till ditt event.
-                  Vi erbjuder paketpriser för större beställningar.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-3">
-                  <a
-                    href="tel:+46701234567"
-                    className="inline-flex items-center justify-center px-6 py-2 bg-amber-700 text-white text-sm font-medium rounded-sm hover:bg-amber-800 transition-colors"
-                  >
-                    Ring och boka
-                  </a>
-                  <a
-                    href="mailto:info@nikasguldkant.se"
-                    className="inline-flex items-center justify-center px-6 py-2 bg-white text-stone-800 text-sm font-medium rounded-sm border border-stone-300 hover:bg-stone-50 transition-colors"
-                  >
-                    Skicka förfrågan
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
           <div className="mt-8 pt-8 border-t border-stone-200">
             <h3 className="font-medium text-stone-800 mb-3">Information</h3>
             <ul className="space-y-2 text-sm text-stone-600">

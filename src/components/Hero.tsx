@@ -1,13 +1,11 @@
-import { PhoneCall, Send } from 'lucide-react';
 
 interface HeroProps {
   title: string;
   subtitle: string;
   image: string;
-  showCTA?: boolean;
 }
 
-export default function Hero({ title, subtitle, image, showCTA = false }: HeroProps) {
+export default function Hero({ title, subtitle, image }: HeroProps) {
   return (
     <div className="relative w-full aspect-[8/5] md:aspect-[16/7] overflow-hidden">
       <div
@@ -28,25 +26,6 @@ export default function Hero({ title, subtitle, image, showCTA = false }: HeroPr
             <p className="text-lg md:text-xl text-stone-100 mb-8 leading-relaxed">
               {subtitle}
             </p>
-          )}
-
-          {showCTA && (
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="tel:+46701234567"
-                className="inline-flex items-center justify-center px-8 py-3 bg-amber-700 text-white font-medium rounded-sm hover:bg-amber-800 transition-colors"
-              >
-                <PhoneCall size={18} className="mr-2" />
-                Ring och boka
-              </a>
-              <a
-                href="mailto:info@nikasguldkant.se"
-                className="inline-flex items-center justify-center px-8 py-3 bg-white text-stone-800 font-medium rounded-sm hover:bg-stone-50 transition-colors"
-              >
-                <Send size={18} className="mr-2" />
-                Maila för offert
-              </a>
-            </div>
           )}
         </div>
 

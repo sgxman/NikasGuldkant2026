@@ -16,11 +16,11 @@ export default function CTA({ title, description }: CTAProps) {
       </p>
       <div className="flex flex-col sm:flex-row gap-4 justify-center">
         <a
-          href="tel:+46701234567"
+          href="tel:+46730207511"
           className="inline-flex items-center justify-center px-8 py-3 bg-amber-700 text-white font-medium rounded-sm hover:bg-amber-800 transition-colors"
         >
           <PhoneCall size={18} className="mr-2" />
-          Ring 070-123 45 67
+          Ring 073-020 75 11
         </a>
         <a
           href="mailto:info@nikasguldkant.se"

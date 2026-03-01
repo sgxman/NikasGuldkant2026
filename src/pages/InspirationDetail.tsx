@@ -85,29 +85,7 @@ export default function InspirationDetail({ caseId, onNavigate }: InspirationDet
               ))}
             </ul>
           </div>
-
-          <div className="bg-gradient-to-br from-amber-50 to-stone-100 rounded-sm border border-stone-200 p-6">
-            <h3 className="font-medium text-stone-800 mb-3">
-              Planerar du liknande event?
-            </h3>
-            <p className="text-sm text-stone-600 mb-4">
-              Kontakta oss så hjälper vi dig skapa ditt drömevt
-            </p>
-            <div className="space-y-2">
-              <a
-                href="tel:+46701234567"
-                className="block text-center px-4 py-2 bg-amber-700 text-white text-sm font-medium rounded-sm hover:bg-amber-800 transition-colors"
-              >
-                Ring och boka
-              </a>
-              <a
-                href="mailto:info@nikasguldkant.se"
-                className="block text-center px-4 py-2 bg-white text-stone-800 text-sm font-medium rounded-sm border border-stone-300 hover:bg-stone-50 transition-colors"
-              >
-                Skicka förfrågan
-              </a>
-            </div>
-          </div>
+      
         </div>
       </div>
     </div>
