@@ -1,4 +1,4 @@
-import { ArrowLeft, Tag } from 'lucide-react';
+import { ArrowLeft } from 'lucide-react';
 import { products } from '../data/products';
 import ResponsiveImage from '../components/ResponsiveImage';
 import { resolveImageSources } from '../utils/images';
