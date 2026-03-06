@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import Hero from '../components/Hero';
-import { fetchCategories,productsjsonurl } from '../data/products';
+import { fetchCategories, productsjsonurl } from '../data/products';
 import { Tag } from 'lucide-react';
 import ResponsiveImage from '../components/ResponsiveImage';
 import { resolveImageSources } from '../utils/images';
@@ -14,7 +14,7 @@ export default function Catalog({ initialCategory, onNavigate }: CatalogProps) {
   const [selectedCategory, setSelectedCategory] = useState(initialCategory || 'all');
   const [selectedSubcategory, setSelectedSubcategory] = useState('all');
   const [categories, setCategories] = useState<{ id: string; name: string }[]>([]);
-  const [subcategoriesByCategory, setSubcategoriesByCategory] = useState<Record<string, { id: string; name: string }[]>>({}); 
+  const [subcategoriesByCategory, setSubcategoriesByCategory] = useState<Record<string, { id: string; name: string }[]>>({});
   const [products, setProducts] = useState<any[]>([]);
 
   useEffect(() => {
@@ -32,7 +32,7 @@ export default function Catalog({ initialCategory, onNavigate }: CatalogProps) {
       setSubcategoriesByCategory(formattedSubcategories);
     });
   }, [initialCategory]);
-    
+
   //initially load all products from the products.json on dropbox
   useEffect(() => {
     fetch(productsjsonurl)
@@ -78,26 +78,25 @@ export default function Catalog({ initialCategory, onNavigate }: CatalogProps) {
                   setSelectedCategory(cat.id);
                   setSelectedSubcategory('all');
                 }}
-                className={`px-6 py-2 rounded-full text-sm font-medium transition-colors ${
-                  selectedCategory === cat.id
-                    ? 'bg-amber-700 text-white'
-                    : 'bg-white text-stone-700 border border-stone-300 hover:border-amber-700'
-                }`}
+                className={`px-6 py-2 rounded-lg text-sm font-medium transition-colors ${selectedCategory === cat.id
+                  ? 'bg-stone-700 text-white'
+                  : 'bg-white text-stone-700 border border-stone-300 hover:border-stone-400'
+                  }`}
               >
                 {cat.name}
               </button>
             ))}
           </div>
 
+
           {selectedCategory !== 'all' && (
             <div className="flex flex-wrap gap-3 justify-center mt-6">
               <button
                 onClick={() => setSelectedSubcategory('all')}
-                className={`px-5 py-2 rounded-full text-sm font-medium transition-colors ${
-                  selectedSubcategory === 'all'
-                    ? 'bg-stone-700 text-white'
-                    : 'bg-white text-stone-700 border border-stone-300 hover:border-stone-700'
-                }`}
+                className={`px-5 py-2 rounded-lg text-sm font-medium transition-colors ${selectedSubcategory === 'all'
+                  ? 'bg-stone-700 text-white'
+                  : 'bg-white text-stone-700 border border-stone-300 hover:border-stone-700'
+                  }`}
               >
                 Alla i kategorin
               </button>
@@ -106,17 +105,17 @@ export default function Catalog({ initialCategory, onNavigate }: CatalogProps) {
                 <button
                   key={subcat.id}
                   onClick={() => setSelectedSubcategory(subcat.id)}
-                  className={`px-5 py-2 rounded-full text-sm font-medium transition-colors ${
-                    selectedSubcategory === subcat.id
-                      ? 'bg-stone-700 text-white'
-                      : 'bg-white text-stone-700 border border-stone-300 hover:border-stone-700'
-                  }`}
+                  className={`px-5 py-2 rounded-lg text-sm font-medium transition-colors ${selectedSubcategory === subcat.id
+                    ? 'bg-stone-700 text-white'
+                    : 'bg-white text-stone-700 border border-stone-300 hover:border-stone-700'
+                    }`}
                 >
                   {subcat.name}
                 </button>
               ))}
             </div>
           )}
+
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
@@ -152,17 +151,7 @@ export default function Catalog({ initialCategory, onNavigate }: CatalogProps) {
             </button>
           ))}
         </div>
-
-        <div className="mt-16 bg-gradient-to-br from-amber-50 to-stone-100 rounded-sm border border-stone-200 p-8 text-center">
-          <Tag className="w-12 h-12 text-amber-800 mx-auto mb-4" />
-          <h3 className="text-2xl font-serif italic text-stone-800 mb-4">
-            Minsta beställning 500 kr
-          </h3>
-          <p className="text-stone-600 max-w-2xl mx-auto">
-            Vi anpassar alltid priserna efter ditt event och erbjuder paketpriser för större beställningar.
-            Kontakta oss för en skräddarsydd offert.
-          </p>
-        </div>
+       
       </div>
     </div>
   );
