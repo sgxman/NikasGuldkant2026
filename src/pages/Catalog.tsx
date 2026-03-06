@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import Hero from '../components/Hero';
 import { fetchCategories, productsjsonurl } from '../data/products';
-import { Tag } from 'lucide-react';
 import ResponsiveImage from '../components/ResponsiveImage';
 import { resolveImageSources } from '../utils/images';
 
