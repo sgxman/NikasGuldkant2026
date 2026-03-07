@@ -1,0 +1,391 @@
+{
+  "categories": [
+    {
+      "id": 100,
+      "name": "glas",
+      "title": "Glas",
+      "subcategories": [
+        { "id": 110, "name": "vinglas", "title": "Vinglas" },
+        { "id": 120, "name": "ovrigaglas", "title": "Övriga glas" }
+      ]
+    },
+    {
+      "id": 200,
+      "name": "bestick",
+      "title": "Bestick",
+      "subcategories": [
+        { "id": 210, "name": "gafflar", "title": "Gafflar" },
+        { "id": 220, "name": "knivar", "title": "Knivar" },
+        { "id": 230, "name": "skedar", "title": "Skedar" }
+      ]
+    },
+    {
+      "id": 300,
+      "name": "servering",
+      "title": "Servering",
+      "subcategories": [
+        { "id": 310, "name": "termos", "title": "Termos" }
+      ]
+    },
+    {
+      "id": 400,
+      "name": "porslin",
+      "title": "Porslin",
+      "subcategories": [
+        { "id": 410, "name": "koppar", "title": "Koppar" },
+        { "id": 420, "name": "tallrikar", "title": "Tallrikar" },
+        { "id": 430, "name": "skalar", "title": "Skålar" }
+      ]
+    },
+    {
+      "id": 500,
+      "name": "dekor",
+      "title": "Dekor",
+      "subcategories": [
+        { "id": 510, "name": "ljusstakar", "title": "Ljusstakar" },
+        { "id": 520, "name": "ljusslingor", "title": "Ljusslingor" },
+        { "id": 530, "name": "vaser", "title": "Vaser" },
+        { "id": 540, "name": "ovrigt", "title": "Övrigt" }
+      ]
+    }
+  ],
+  "products": [
+    {
+      "id": 111,
+      "name": "Desservinglas",
+      "categoryName": "glas",
+      "subcategoryName": "ovrigaglas",
+      "price": "5",
+      "image": "obj-dessertglas.jpg",
+      "imageBase": "obj-dessertglas",
+      "description": "Dessertvinglas, perfekta för festliga tillfällen.",
+      "details": "Höjd: 23cm.\nKristallglas med vacker gravyr. Passar 10-12 cl.",
+      "available": 50
+    },
+    {
+      "id": 112,
+      "name": "Whiskeyglas",
+      "categoryName": "glas",
+      "subcategoryName": "ovrigaglas",
+      "price": "5",
+      "image": "obj-whiskeyglas.webp",
+      "imageBase": "obj-whiskeyglas",
+      "description": "Klassiskt whiskeyglas med dekorativt kristallmönster. Passar utmärkt för whisky och drinkar.",
+      "details": "Färg: Transparent.\nTyp: Lowball/Whiskeyglas.\nMaterial: Glas.",
+      "available": 60
+    },
+    {
+      "id": 113,
+      "name": "Termos",
+      "categoryName": "servering",
+      "subcategoryName": "termos",
+      "price": "10",
+      "image": "obj-termos.webp",
+      "imageBase": "obj-termos",
+      "description": "Praktisk termos för kaffe/te. Perfekt för servering vid buffé, bröllop och event.",
+      "details": "Färg: Rostfri/svart.\nTyp: Termoskanna.\nMaterial: Rostfritt stål/plast.",
+      "available": 12
+    },
+    {
+      "id": 115,
+      "name": "Drinkglas",
+      "categoryName": "glas",
+      "subcategoryName": "ovrigaglas",
+      "price": "5",
+      "image": "obj-drinkglas.webp",
+      "imageBase": "obj-drinkglas",
+      "description": "Eleganta drinkglas i modern design, perfekta för festliga tillfällen.",
+      "details": "",
+      "available": 60
+    },
+    {
+      "id": 116,
+      "name": "Avecglas",
+      "categoryName": "glas",
+      "subcategoryName": "ovrigaglas",
+      "price": "5",
+      "image": "obj-avecglas-hotshot.webp",
+      "imageBase": "obj-avecglas-hotshot",
+      "description": "Smalt avec-/shotglas som passar perfekt till avec och andra shots.",
+      "details": "",
+      "available": ""
+    },
+     {
+      "id": 118,
+      "name": "Snapsglas på fot",
+      "categoryName": "glas",
+      "subcategoryName": "ovrigaglas",
+      "price": "5",
+      "image": "obj-snapsglas-pa-fot.webp",
+      "imageBase": "obj-snapsglas-pa-fot",
+      "description": "Elegant snapsglas på fot som passar perfekt till snaps och avec vid fest och bröllop.",
+      "details": "Färg: Transparent.\nTyp: Snapsglas på fot.\nMaterial: Glas.",
+      "available": ""
+    },
+    {
+      "id": 119,
+      "name": "Tekopp",
+      "categoryName": "porslin",
+      "subcategoryName": "koppar",
+      "price": "5",
+      "image": "obj-thekopp.webp",
+      "imageBase": "obj-thekopp",
+      "description": "Klassisk vit tekopp i porslin som passar perfekt till kaffe eller te vid bröllop, fest och andra tillställningar.",
+      "details": "Färg: Vit.\nMaterial: Porslin.\nTyp: Tekopp med handtag.",
+      "available": ""
+    },
+    {
+      "id": 117,
+      "name": "Varmrättstallrik",
+      "categoryName": "porslin",
+      "subcategoryName": "tallrikar",
+      "price": "",
+      "image": "obj-tallrik-varmratt.webp",
+      "imageBase": "obj-tallrik-varmratt",
+      "description": "Klassisk vit porslinstallrik för varmrätter. Passar perfekt till bröllop, fester och större middagar.",
+      "details": "Färg: Vit.\nMaterial: Porslin.\nTyp: Varmrättstallrik.",
+      "available": ""
+    },
+    {
+      "id": 120,
+      "name": "Dispenser",
+      "categoryName": "servering",
+      "subcategoryName": "dispenser",
+      "price": "30",
+      "image": "obj-dispenser.slat.webp",
+      "imageBase": "obj-dispenser.slat",
+      "description": "Stor slät glasdispenser med tappkran som passar perfekt för vatten, lemonad eller andra drycker vid fest, bröllop och buffé.",
+      "details": "Material: Glas.\nMed tappkran.\nLevereras med metallställning.",
+      "available": ""
+    },
+    {
+      "id": 121,
+      "name": "Dispenser",
+      "categoryName": "servering",
+      "subcategoryName": "dispenser",
+      "price": "30",
+      "image": "obj-dispenser-rutig.webp",
+      "imageBase": "obj-dispenser-rutig",
+      "description": "Stor rutig glasdispenser med tappkran som passar perfekt för vatten, lemonad eller andra drycker vid fest, bröllop och buffé.",
+      "details": "Material: Glas.\nMed tappkran.\nLevereras med metallställning.",
+      "available": ""
+    },
+    {
+      "id": 122,
+      "name": "Kaffekopp",
+      "categoryName": "porslin",
+      "subcategoryName": "koppar",
+      "price": "5",
+      "image": "obj-kaffekopp-fat-slat.webp",
+      "imageBase": "obj-kaffekopp-fat-slat",
+      "description": "Stapelbar vit kaffekopp i porslin som passar perfekt till kaffe eller te vid bröllop, fest och andra tillställningar.",
+      "details": "Färg: Vit.\nMaterial: Porslin.\nTyp: Kaffekopp med handtag.",
+      "available": ""
+    },
+    {
+      "id": 123,
+      "name": "Kaffekopp",
+      "categoryName": "porslin",
+      "subcategoryName": "koppar",
+      "price": "5",
+      "image": "obj-kaffekopp-fat-snurr.webp",
+      "imageBase": "obj-kaffekopp-fat-snurr",
+      "description": "Vit kaffekopp i porslin som passar perfekt till kaffe eller te vid bröllop, fest och andra tillställningar.",
+      "details": "Färg: Vit.\nMaterial: Porslin.\nTyp: Kaffekopp med handtag.",
+      "available": ""
+    },
+    {
+      "id": 124,
+      "name": "Soppskål",
+      "categoryName": "porslin",
+      "subcategoryName": "tallrikar",
+      "price": "5",
+      "image": "obj-skal-soppa.webp",
+      "imageBase": "obj-skal-soppa",
+      "description": "Vit liten soppskål i porslin som passar perfekt till förrättssoppa eller andra rätter vid bröllop, fest och andra tillställningar.",
+      "details": "Färg: Vit.\nMaterial: Porslin.\nTyp: Soppskål.",
+      "available": ""
+    },
+    {
+      "id": 125,
+      "name": "Avecglas",
+      "categoryName": "glas",
+      "subcategoryName": "ovrigaglas",
+      "price": "5",
+      "image": "obj-avecglas-pa-fot.webp",
+      "imageBase": "obj-avecglas-pa-fot",
+      "description": "Vit liten avecglas i glas som passar perfekt till efterrätt eller andra rätter vid bröllop, fest och andra tillställningar.",
+      "details": "Färg: Vit.\nMaterial: Glas.\nTyp: Avecglas .",
+      "available": ""
+    },
+    {
+      "id": 126,
+      "name": "Avecglashållare",
+      "categoryName": "glas",
+      "subcategoryName": "ovrigaglas",
+      "price": "5",
+      "image": "obj-snapsglashallare-inkl-glas.webp",
+      "imageBase": "obj-snapsglashallare-inkl-glas",
+      "description": "Praktisk glashållare i metall med 10 glas. Fungerar även att ställa små snapsflaskor i hållaren.",
+      "details": "Färg: Vit.\nMaterial: Metall.\nTyp: Avecglashållare .",
+      "available": ""
+    },
+    {
+      "id": 127,
+      "name": "Vattenflaska",
+      "categoryName": "servering",
+      "subcategoryName": "vattenflaskor",
+      "price": "5",
+      "image": "obj-vattenflaska-bubblig.webp",
+      "imageBase": "obj-vattenflaska-bubblig",
+      "description": "Klassisk vattenflaska med bubbligt mönster och knäppkork.",
+      "details": "Färg: Vit.\nMaterial: Glas.\nTyp: Vattenflaska .",
+      "available": ""
+    },
+    {
+      "id": 128,
+      "name": "Vattenglas",
+      "categoryName": "glas",
+      "subcategoryName": "ovrigaglas",
+      "price": "5",
+      "image": "obj-vattenglas.webp",
+      "imageBase": "obj-vattenglas",
+      "description": "Enkelt vattenglas.",
+      "details": "Färg: Vit.\nMaterial: Glas.\nTyp: Vattenglas .",
+      "available": ""
+    },
+    {
+      "id": 129,
+      "name": "Vitvinglas",
+      "categoryName": "glas",
+      "subcategoryName": "vinglas",
+      "price": "5",
+      "image": "obj-vinglas-vit.webp",
+      "imageBase": "obj-vinglas-vit",
+      "description": "Klassiska vitvinglas i glas som passar perfekt till vin eller andra drycker vid bröllop, fest och andra tillställningar.",
+      "details": "Färg: Vit.\nMaterial: Glas.\nTyp: Vitvinglas   .",
+      "available": ""
+    },
+    {
+      "id": 130,
+      "name": "Rödvinsglas",
+      "categoryName": "glas",
+      "subcategoryName": "vinglas",
+      "price": "5",
+      "image": "obj-vinglas-rött-001.webp",
+      "imageBase": "obj-vinglas-rött-001",
+      "description": "Klassiska rödvinsglas i glas som passar perfekt till vin eller andra drycker vid bröllop, fest och andra tillställningar.",
+      "details": "Färg: Vit.\nMaterial: Glas.\nTyp: Rödvinsglas.",
+      "available": ""
+    },
+    {
+      "id": 131,
+      "name": "Vas/Flaska",
+      "categoryName": "dekor",
+      "subcategoryName": "ovrigt",
+      "price": "10",
+      "image": "obj-vas-brunflaska.webp",
+      "imageBase": "obj-vas-brunflaska",
+      "description": "Enkel vas eller flaska i brun färg.",
+      "details": "Färg: Brun.\nMaterial: Glas.\nTyp: Vas/Flaska .",
+      "available": ""
+    },
+    {
+      "id": 132,
+      "name": "Vinkylare med handtag",
+      "categoryName": "servering",
+      "subcategoryName": "ovrigt",
+      "price": "20",
+      "image": "obj-vinkylare-handtag.webp",
+      "imageBase": "obj-vinkylare-handtag",
+      "description": "Stor rundad vinkylare med handtag, perfekt för att hålla flaskan kall på festen.",
+      "details": "Färg: Silver.\nMaterial: Glas.\nTyp: Vinkylare .",
+      "available": ""
+    },
+    {
+      "id": 133,
+      "name": "Vinkylare",
+      "categoryName": "servering",
+      "subcategoryName": "ovrigt",
+      "price": "20",
+      "image": "obj-vinkylare-rundad.webp",
+      "imageBase": "obj-vinkylare-rundad",
+      "description": "Enkel vinkylare, perfekt att hålla flaskan kall på festen.",
+      "details": "Färg: Silver.\nMaterial: Glas.\nTyp: Vinkylare .",
+      "available": ""
+    },
+    {
+      "id": 134,
+      "name": "Bordpratare",
+      "categoryName": "dekor",
+      "subcategoryName": "ovrigt",
+      "price": "5",
+      "image": "obj-bordspratare.webp",
+      "imageBase": "obj-bordspratare",
+      "description": "Bordspratare perfekt för att visa bordsnummer på borden, eller innehåll i buffen, eller priser i baren.",
+      "details": "Färg: Vit.\nMaterial: Plast.\nTyp: Bordpratare .",
+      "available": ""
+    },
+    {
+      "id": 135,
+      "name": "Karaff",
+      "categoryName": "servering",
+      "subcategoryName": "ovrigt",
+      "price": "5",
+      "image": "obj-karaff.webp",
+      "imageBase": "obj-karaff",
+      "description": "Karaff för vatten eller vin, perfekt för att servera vid middagar eller fester.",
+      "details": "Färg: Vit.\nMaterial: Glas.\nTyp: Karaff .",
+      "available": ""
+    },
+    {
+      "id": 136,
+      "name": "Ljusstake",
+      "categoryName": "dekor",
+      "subcategoryName": "ovrigt",
+      "price": "5",
+      "image": "obj-ljusstake-bubblig.webp",
+      "imageBase": "obj-ljusstake-bubblig",
+      "description": "Enkel ljusstake för värmeljus i bubblig design.",
+      "details": "Färg: Vit.\nMaterial: Glas.\nTyp: Ljusstake .",
+      "available": ""
+    },
+    {
+      "id": 137,
+      "name": "Ljusstake",
+      "categoryName": "dekor",
+      "subcategoryName": "ovrigt",
+      "price": "5",
+      "image": "obj-ljusstake-fyrkant.webp",
+      "imageBase": "obj-ljusstake-fyrkant",
+      "description": "Enkel ljusstake för värmeljus i slät design.",
+      "details": "Färg: Vit.\nMaterial: Glas.\nTyp: Ljusstake .",
+      "available": ""
+    },
+     {
+      "id": 138,
+      "name": "Mjölkkanna liten",
+      "categoryName": "servering",
+      "subcategoryName": "ovrigt",
+      "price": "5",
+      "image": "obj-mjolkkanna-liten.webp",
+      "imageBase": "obj-mjolkkanna-liten",
+      "description": "Enkel charmig mjölkkanna i tetraform för servering av mjölk till kaffet.",
+      "details": "Färg: Vit.\nMaterial: Glas.\nTyp: Mjölkkanna .",
+      "available": ""
+    },
+    {
+      "id": 139,
+      "name": "Mjölkkanna stor",
+      "categoryName": "servering",
+      "subcategoryName": "ovrigt",
+      "price": "5",
+      "image": "obj-mjolkkanna-stor.webp",
+      "imageBase": "obj-mjolkkanna-stor",
+      "description": "Enkel charmig mjölkkanna i tetraform för servering av mjölk till kaffet.",
+      "details": "Färg: Vit.\nMaterial: Glas.\nTyp: Mjölkkanna .",
+      "available": ""
+    }
+    
+  ]
+}
