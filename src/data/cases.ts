@@ -14,7 +14,7 @@ export const cases = [
     products: ['Vintage porslin', 'Kristallglas', 'Linnedukar', 'Blommor i krukor'],
     images: [
       { name: 'insp_kraftbrollop_001', imageText: 'Här har olle städat och gjort fint' },
-      'insp_kraftbrollop_002',
+      "insp_kraftbrollop_002",
       'insp_kraftbrollop_004'
     ],
     season: 'Sommar'
