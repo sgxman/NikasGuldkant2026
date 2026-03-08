@@ -69,3 +69,24 @@ export function resolveImageSources(image: string, imageBase?: string): ImageSou
 
   return { src: withBaseUrl(image) };
 }
+
+export function createBackgroundImageSet(baseName: string, options: StaticImageSetOptions = {}): string {
+  const widths = options.widths ?? DEFAULT_WIDTHS;
+  const format = options.format ?? 'webp';
+  const defaultWidth = options.defaultWidth ?? 1600;
+
+  // Skapa URL:er för de olika storlekarna
+  const urls = widths.map(width => withBaseUrl(`/images/webp-${width}/${baseName}.${format}`));
+  
+  // Om endast en storlek efterfrågas, returnera enkel url()
+  if (widths.length === 1) {
+    return `url(${urls[0]})`;
+  }
+
+  // Skapa image-set deklaration med alla storlekar
+  // För background-images, använd viewport-bredd responsivitet istället för DPR
+  // Men image-set() stöder inte viewport queries, så vi använder defaultWidth som fallback
+  const fallbackUrl = withBaseUrl(`/images/webp-${defaultWidth}/${baseName}.${format}`);
+  
+  return `url(${fallbackUrl})`;
+}

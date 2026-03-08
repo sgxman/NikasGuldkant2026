@@ -1,5 +1,5 @@
 import Hero from '../components/Hero';
-import { withBaseUrl} from '../utils/images';
+import { withBaseUrl, createBackgroundImageSet } from '../utils/images';
 
 interface HomeProps {
   onNavigate: (page: string, params?: any) => void;
@@ -100,7 +100,7 @@ export default function Home({ onNavigate }: HomeProps) {
             <div
               className="absolute inset-0 bg-center"
               style={{ 
-                backgroundImage: `-webkit-image-set(url(${withBaseUrl('/images/webp-400/insp_skumpa.webp')}) 1x, url(${withBaseUrl('/images/webp-800/insp_skumpa.webp')}) 2x, url(${withBaseUrl('/images/webp-1600/insp_skumpa.webp')}) 3x), image-set(url(${withBaseUrl('/images/webp-400/insp_skumpa.webp')}) 1x, url(${withBaseUrl('/images/webp-800/insp_skumpa.webp')}) 2x, url(${withBaseUrl('/images/webp-1600/insp_skumpa.webp')}) 3x)`,
+                backgroundImage: createBackgroundImageSet('insp_skumpa'),
                 backgroundSize: '100% auto',
               }}
             >
