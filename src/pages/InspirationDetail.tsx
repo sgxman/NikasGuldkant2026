@@ -1,5 +1,6 @@
 import { ArrowLeft, Tag, Users } from 'lucide-react';
 import { cases } from '../data/cases';
+import { getImagePropsFromName } from '../utils/images';
 
 interface InspirationDetailProps {
   caseId: string;
@@ -50,15 +51,20 @@ export default function InspirationDetail({ caseId, onNavigate }: InspirationDet
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
-        {case_.images.map((img, index) => (
-          <div key={index} className="aspect-[4/3] overflow-hidden rounded-sm border border-stone-200">
-            <img
-              src={img}
-              alt={`${case_.title} - bild ${index + 1}`}
-              className="w-full h-full object-cover"
-            />
-          </div>
-        ))}
+        {case_.images.map((img, index) => {
+          const imageProps = getImagePropsFromName(img);
+          const { style, ...restProps } = imageProps;
+          return (
+            <div key={index} className="aspect-[4/3] overflow-hidden rounded-sm border border-stone-200">
+              <img
+                {...restProps}
+                alt={`${case_.title} - bild ${index + 1}`}
+                className="w-full h-full object-cover"
+                style={style}
+              />
+            </div>
+          );
+        })}
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">

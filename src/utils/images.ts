@@ -13,6 +13,11 @@ interface ImageSources {
   sizes?: string;
 }
 
+interface CSSProperties {
+  transform?: string;
+  [key: string]: string | number | undefined;
+}
+
 function isExternalUrl(path: string): boolean {
   return /^https?:\/\//i.test(path) || path.startsWith('data:') || path.startsWith('blob:');
 }
@@ -90,3 +95,54 @@ export function createBackgroundImageSet(baseName: string, options: StaticImageS
   
   return `url(${fallbackUrl})`;
 }
+
+export function createInspirationImageSet(baseName: string, options: StaticImageSetOptions = {}): ImageSources {
+  // Returnerar src, srcSet och sizes för att användas med <img> taggar
+  return createStaticImageSet(baseName, {
+    ...options,
+    defaultWidth: options.defaultWidth ?? 800,
+    sizes: options.sizes ?? '(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px'
+  });
+}
+
+export function getInspirationImageUrl(baseName: string, options: StaticImageSetOptions = {}): string {
+  // Returnerar bara URL-strängen för thumbnail/preview
+  const format = options.format ?? 'webp';
+  const width = options.defaultWidth ?? 800;
+  return withBaseUrl(`/images/webp-${width}/${baseName}.${format}`);
+}
+
+export function getImagePropsFromName(imageName: string | { name: string; rotate?: number, imageText?: string }, options: StaticImageSetOptions = {}): ImageSources & { style?: CSSProperties } {
+  // Hantera både strängar och objekt med rotation
+  let name: string;
+  let rotate: number = 0;
+  let imageText: string | undefined = undefined;
+  
+  if (typeof imageName === 'string') {
+    name = imageName;
+  } else {
+    name = imageName.name;
+    rotate = imageName.rotate ?? 0;
+    imageText = imageName.imageText;
+  }
+  
+  // Om det är en extern URL eller fullständig path, returnera som enkel src
+  if (isExternalUrl(name) || name.includes('.')) {
+    const result: ImageSources & { style?: CSSProperties } = { src: name };
+    if (rotate !== 0) {
+      result.style = { transform: `rotate(${rotate * 90}deg)` };
+    }
+    return result;
+  }
+  
+  // Annars skapa ett responsivt imageSet från bildnamnet
+  const imageSet = createInspirationImageSet(name, options);
+  const result: ImageSources & { style?: CSSProperties } = { ...imageSet };
+  
+  if (rotate !== 0) {
+    result.style = { transform: `rotate(${rotate * 90}deg)` };
+  }
+  
+  return result;
+}
+

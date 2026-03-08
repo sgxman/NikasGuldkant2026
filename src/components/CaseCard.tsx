@@ -6,7 +6,10 @@ interface Case {
   type: string;
   guests: number;
   image: string;
+  imageSrcSet: string | undefined;
+  imageSizes: string;
   description: string;
+  season: string;
 }
 
 interface CaseCardProps {
@@ -23,6 +26,8 @@ export default function CaseCard({ case_, onClick }: CaseCardProps) {
       <div className="aspect-[4/3] overflow-hidden">
         <img
           src={case_.image}
+          srcSet={case_.imageSrcSet}
+          sizes={case_.imageSizes}
           alt={case_.title}
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
         />
@@ -43,6 +48,9 @@ export default function CaseCard({ case_, onClick }: CaseCardProps) {
         </div>
         <p className="text-sm text-stone-600 line-clamp-2">
           {case_.description}
+        </p>
+        <p>
+          Årstid: {case_.season}
         </p>
       </div>
     </button>
