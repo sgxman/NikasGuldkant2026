@@ -50,7 +50,7 @@ export function withBaseUrl(path: string): string {
 export function createStaticImageSet(baseName: string, options: StaticImageSetOptions = {}): ImageSources {
   const widths = options.widths ?? DEFAULT_WIDTHS;
   const format = options.format ?? 'webp';
-  const defaultWidth = options.defaultWidth ?? 400;
+  const defaultWidth = options.defaultWidth ?? 1600;
   const sizes = options.sizes ?? '(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw';
 
   //WITH BASEURL

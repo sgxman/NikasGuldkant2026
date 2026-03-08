@@ -1,6 +1,7 @@
 import Hero from '../components/Hero';
 import CaseCard from '../components/CaseCard';
 import { cases } from '../data/cases';
+import { withBaseUrl } from '../utils/images';
 
 interface InspirationProps {
   onNavigate: (page: string, params?: any) => void;
@@ -12,7 +13,7 @@ export default function Inspiration({ onNavigate }: InspirationProps) {
       <Hero
         title="Inspiration"
         subtitle=""
-        image="https://images.pexels.com/photos/2306281/pexels-photo-2306281.jpeg?auto=compress&cs=tinysrgb&w=1200"
+        image={withBaseUrl('/images/webp-800/insp_skumpa.webp')}
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
