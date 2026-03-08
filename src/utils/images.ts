@@ -18,6 +18,19 @@ interface CSSProperties {
   [key: string]: string | number | undefined;
 }
 
+export interface ImageDefinition {
+  name: string;
+  rotate?: number;
+  imageText?: string;
+}
+
+export type ImageInput = string | ImageDefinition;
+
+export interface ProcessedImageProps extends ImageSources {
+  style?: CSSProperties;
+  imageText?: string;
+}
+
 function isExternalUrl(path: string): boolean {
   return /^https?:\/\//i.test(path) || path.startsWith('data:') || path.startsWith('blob:');
 }
@@ -112,8 +125,8 @@ export function getInspirationImageUrl(baseName: string, options: StaticImageSet
   return withBaseUrl(`/images/webp-${width}/${baseName}.${format}`);
 }
 
-export function getImagePropsFromName(imageName: string | { name: string; rotate?: number, imageText?: string }, options: StaticImageSetOptions = {}): ImageSources & { style?: CSSProperties } {
-  // Hantera både strängar och objekt med rotation
+export function getImagePropsFromName(imageName: ImageInput, options: StaticImageSetOptions = {}): ProcessedImageProps {
+  // Hantera både strängar och objekt med rotation/imageText
   let name: string;
   let rotate: number = 0;
   let imageText: string | undefined = undefined;
@@ -128,19 +141,26 @@ export function getImagePropsFromName(imageName: string | { name: string; rotate
   
   // Om det är en extern URL eller fullständig path, returnera som enkel src
   if (isExternalUrl(name) || name.includes('.')) {
-    const result: ImageSources & { style?: CSSProperties } = { src: name };
+    const result: ProcessedImageProps = { src: name };
     if (rotate !== 0) {
       result.style = { transform: `rotate(${rotate * 90}deg)` };
+    }
+    if (imageText) {
+      result.imageText = imageText;
     }
     return result;
   }
   
   // Annars skapa ett responsivt imageSet från bildnamnet
   const imageSet = createInspirationImageSet(name, options);
-  const result: ImageSources & { style?: CSSProperties } = { ...imageSet };
+  const result: ProcessedImageProps = { ...imageSet };
   
   if (rotate !== 0) {
     result.style = { transform: `rotate(${rotate * 90}deg)` };
+  }
+  
+  if (imageText) {
+    result.imageText = imageText;
   }
   
   return result;
