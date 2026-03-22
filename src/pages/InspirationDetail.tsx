@@ -50,6 +50,17 @@ export default function InspirationDetail({ caseId, onNavigate }: InspirationDet
           </span>
         </div>
       </div>
+      
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-8"> 
+        <div className="lg:col-span-4">
+          <div className="bg-white rounded-sm border border-stone-200 p-8">
+            <p className="text-stone-600 leading-relaxed">
+              {case_.fullDescription}
+            </p>
+          </div>
+        </div>
+
+      </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
         {case_.images.map((img, index) => {
@@ -69,18 +80,6 @@ export default function InspirationDetail({ caseId, onNavigate }: InspirationDet
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        <div className="lg:col-span-2">
-          <div className="bg-white rounded-sm border border-stone-200 p-8">
-            <h2 className="text-2xl font-serif italic text-stone-800 mb-4">
-              Om evenemanget
-            </h2>
-            <p className="text-stone-600 leading-relaxed">
-              {case_.fullDescription}
-            </p>
-          </div>
-        </div>
-
-        <div>
           <div className="bg-white rounded-sm border border-stone-200 p-6 mb-6">
             <h3 className="font-medium text-stone-800 mb-4">Produkter som användes</h3>
             <ul className="space-y-2">
@@ -92,9 +91,15 @@ export default function InspirationDetail({ caseId, onNavigate }: InspirationDet
               ))}
             </ul>
           </div>
-      
-        </div>
       </div>
+
+      <button
+        onClick={() => onNavigate('inspiration')}
+        className="flex items-center text-stone-600 hover:text-amber-800 transition-colors mb-8"
+      >
+        <ArrowLeft size={20} className="mr-2" />
+        Tillbaka till inspiration
+      </button>
     </div>
   );
 }

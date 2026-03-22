@@ -9,7 +9,6 @@ interface Case {
   imageSrcSet: string | undefined;
   imageSizes: string;
   description: string;
-  season: string;
 }
 
 interface CaseCardProps {
@@ -48,9 +47,6 @@ export default function CaseCard({ case_, onClick }: CaseCardProps) {
         </div>
         <p className="text-sm text-stone-600 line-clamp-2">
           {case_.description}
-        </p>
-        <p>
-          Årstid: {case_.season}
         </p>
       </div>
     </button>

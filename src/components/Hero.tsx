@@ -3,9 +3,10 @@ interface HeroProps {
   title: string;
   subtitle: string;
   image: string;
+  showNikasGuldkantText?: boolean;
 }
 
-export default function Hero({ title, subtitle, image }: HeroProps) {
+export default function Hero({ title, subtitle, image, showNikasGuldkantText }: HeroProps) {
   return (
     <div className="relative w-full aspect-[8/5] md:aspect-[16/7] overflow-hidden">
       <div
@@ -29,11 +30,13 @@ export default function Hero({ title, subtitle, image }: HeroProps) {
           )}
         </div>
 
-        <div className="absolute bottom-8 right-4 md:bottom-12 md:right-8 lg:bottom-16 lg:right-12">
-          <h2 className="font-lavishly text-white text-5xl md:text-6xl lg:text-7xl xl:text-8xl opacity-60 pointer-events-none">
-            Nikas Guldkant
-          </h2>
-        </div>
+        {showNikasGuldkantText && (
+          <div className="absolute bottom-8 right-4 md:bottom-12 md:right-8 lg:bottom-16 lg:right-12">
+            <h2 className="font-lavishly text-white text-5xl md:text-6xl lg:text-7xl xl:text-8xl opacity-60 pointer-events-none">
+              Nikas Guldkant
+            </h2>
+          </div>
+        )}
       </div>
     </div>
   );

@@ -44,6 +44,9 @@ export default function Contact() {
                   <a href={`mailto:${contactEmail}`} className="text-stone-600 hover:text-amber-800 transition-colors">
                     {contactEmail}
                   </a>
+                  <p className="text-sm text-stone-500 mt-1">
+                    För snabbast svar, ring gärna istället för att mejla
+                  </p>
                 </div>
               </div>
 

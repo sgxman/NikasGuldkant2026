@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import Hero from '../components/Hero';
 import { fetchCategories, productsjsonurl } from '../data/products';
 import ResponsiveImage from '../components/ResponsiveImage';
-import { resolveImageSources } from '../utils/images';
+import { resolveImageSources, withBaseUrl } from '../utils/images';
 
 interface CatalogProps {
   initialCategory?: string;
@@ -64,7 +64,7 @@ export default function Catalog({ initialCategory, onNavigate }: CatalogProps) {
       <Hero
         title="Sortiment"
         subtitle=""
-        image="https://images.pexels.com/photos/1543762/pexels-photo-1543762.jpeg?auto=compress&cs=tinysrgb&w=1200"
+        image={withBaseUrl('/images/webp-800/meny-sortiment.webp')}
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">

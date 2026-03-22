@@ -83,15 +83,7 @@ export default function ProductDetail({ productId, onNavigate }: ProductDetailPr
             </p>
           </div>
 
-          <div className="mt-8 pt-8 border-t border-stone-200">
-            <h3 className="font-medium text-stone-800 mb-3">Information</h3>
-            <ul className="space-y-2 text-sm text-stone-600">
-              <li>• Minsta beställning: 500 kr</li>
-              <li>• Leverans tillgänglig inom Hudiksvall med omnejd</li>
-              <li>• Återlämnas smutsiga - vi tar hand om disken</li>
-              <li>• Boka minst 2-3 veckor i förväg</li>
-            </ul>
-          </div>
+
         </div>
       </div>
     </div>
