@@ -44,15 +44,19 @@ export const cases = [
     title: 'Hälsingebröllop',
     type: 'Bröllop',
     guests: 40,
-    image: createInspirationImageSet('hostmiddag_vanner_001', { defaultWidth: 800 }).src,
-    imageSrcSet: createInspirationImageSet('hostmiddag_vanner_001', { defaultWidth: 800 }).srcSet,
+    image: createInspirationImageSet('idenor-004', { defaultWidth: 800 }).src,
+    imageSrcSet: createInspirationImageSet('idenor-004', { defaultWidth: 800 }).srcSet,
     imageSizes: '(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw',
     description: 'Utomhusbröllop i Hälsingland.',
     fullDescription: 'En vacker bröllopsfest med 40 gäster på en Hälsingsk innergård. Efter mingel, spel och lekar utomhus följde en trerätters middag i logen. Baren byggdes upp i ett närligggande rum och ljusslingor förstärkte den magiska känslan både inne och ute.',
     products: ['Porslin', 'Glas', 'Barbåge', 'Linnedukar', 'Stolsöverdrag', 'Tyllgardiner', 'Dekorationer', 'Ljusslingor'],   
     images: [
-      'hostmiddag_vanner_001',
-      'hostmiddag_vanner_002'
+      'idenor-001',
+      'idenor-002',
+      'idenor-003',
+      'idenor-004',
+      'idenor-005',
+      'idenor-006'
     ],
     season: 'Höst'
   }
