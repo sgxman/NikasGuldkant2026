@@ -6,12 +6,13 @@ import { resolveImageSources, withBaseUrl } from '../utils/images';
 
 interface CatalogProps {
   initialCategory?: string;
+  initialSubcategory?: string;
   onNavigate: (page: string, params?: any) => void;
 }
 
-export default function Catalog({ initialCategory, onNavigate }: CatalogProps) {
+export default function Catalog({ initialCategory, initialSubcategory, onNavigate }: CatalogProps) {
   const [selectedCategory, setSelectedCategory] = useState(initialCategory || 'all');
-  const [selectedSubcategory, setSelectedSubcategory] = useState('all');
+  const [selectedSubcategory, setSelectedSubcategory] = useState(initialSubcategory || 'all');
   const [categories, setCategories] = useState<{ id: string; name: string }[]>([]);
   const [subcategoriesByCategory, setSubcategoriesByCategory] = useState<Record<string, { id: string; name: string }[]>>({});
   const [products, setProducts] = useState<any[]>([]);
@@ -19,6 +20,9 @@ export default function Catalog({ initialCategory, onNavigate }: CatalogProps) {
   useEffect(() => {
     if (initialCategory) {
       setSelectedCategory(initialCategory);
+    }
+    if (initialSubcategory) {
+      setSelectedSubcategory(initialSubcategory);
     }
 
     fetchCategories().then(fetchedCategories => {
@@ -121,7 +125,7 @@ export default function Catalog({ initialCategory, onNavigate }: CatalogProps) {
           {filteredProducts.map(product => (
             <button
               key={product.id}
-              onClick={() => onNavigate('product-detail', { id: product.id })}
+              onClick={() => onNavigate('product-detail', { id: product.id, category: selectedCategory, subcategory: selectedSubcategory })}
               className="bg-white rounded-sm border border-stone-200 overflow-hidden hover:shadow-lg transition-all group text-left"
             >
               <div className="aspect-square overflow-hidden">

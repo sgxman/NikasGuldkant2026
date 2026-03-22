@@ -1,5 +1,6 @@
 
-export const productsjsonurl = 'https://dl.dropboxusercontent.com/scl/fi/ax4a6m4xe7hrd712ryjvf/products.json?rlkey=yrxltr6e7nle9p8dpilesks85';
+// use local products.json file from public folder
+export const productsjsonurl = `${import.meta.env.BASE_URL}products.json`;
 
 export interface Product {
   id: string;

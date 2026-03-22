@@ -13,6 +13,7 @@ type PageType = 'start' | 'sortiment' | 'sa-gar-det-till' | 'inspiration' | 'bil
 
 interface NavigationParams {
   category?: string;
+  subcategory?: string;
   id?: string;
 }
 
@@ -47,7 +48,7 @@ function App() {
       case 'start':
         return <Home onNavigate={handleNavigate} />;
       case 'sortiment':
-        return <Catalog initialCategory={navigationParams.category} onNavigate={handleNavigate} />;
+        return <Catalog initialCategory={navigationParams.category} initialSubcategory={navigationParams.subcategory} onNavigate={handleNavigate} />;
       case 'sa-gar-det-till':
         return <HowItWorks />;
       case 'inspiration':
@@ -55,7 +56,7 @@ function App() {
       case 'kontakt':
         return <Contact />;
       case 'product-detail':
-        return <ProductDetail productId={navigationParams.id || ''} onNavigate={handleNavigate} />;
+        return <ProductDetail productId={navigationParams.id || ''} category={navigationParams.category} subcategory={navigationParams.subcategory} onNavigate={handleNavigate} />;
       case 'inspiration-detail':
         return <InspirationDetail caseId={navigationParams.id || ''} onNavigate={handleNavigate} />;
       default:

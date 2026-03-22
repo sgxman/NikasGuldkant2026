@@ -7,10 +7,12 @@ import { useState } from 'react';
 
 interface ProductDetailProps {
   productId: string;
+  category?: string;
+  subcategory?: string;
   onNavigate: (page: string, params?: any) => void;
 }
 
-export default function ProductDetail({ productId, onNavigate }: ProductDetailProps) {
+export default function ProductDetail({ productId, category, subcategory, onNavigate }: ProductDetailProps) {
   const [product, setProduct] = useState<any | null>(null);
 
   useEffect(() => {
@@ -25,7 +27,7 @@ export default function ProductDetail({ productId, onNavigate }: ProductDetailPr
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
         <p className="text-stone-600">Produkten kunde inte hittas</p>
         <button
-          onClick={() => onNavigate('sortiment')}
+          onClick={() => onNavigate('sortiment', category && category !== 'all' ? { category, subcategory } : undefined)}
           className="mt-4 text-amber-800 hover:text-amber-900"
         >
           Tillbaka till sortiment
@@ -38,7 +40,7 @@ export default function ProductDetail({ productId, onNavigate }: ProductDetailPr
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
       <button
-        onClick={() => onNavigate('sortiment')}
+        onClick={() => onNavigate('sortiment', category && category !== 'all' ? { category, subcategory } : undefined)}
         className="flex items-center text-stone-600 hover:text-amber-800 transition-colors mb-8"
       >
         <ArrowLeft size={20} className="mr-2" />
