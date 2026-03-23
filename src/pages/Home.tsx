@@ -18,7 +18,7 @@ export default function Home({ onNavigate }: HomeProps) {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
       {/* a larger welcome text */}
       <div className="text-center text-stone-800 mb-12">
-        <h2 className="text-3xl font-serif italic mb-4">Välkommen till Nikas Guldkant</h2>
+        <h2 className="text-3xl font-serif italic mb-4">Välkommen till<br />Nikas Guldkant</h2>
         <p className="text-lg leading-relaxed">
           Välkommen till Nikas Guldkant – det bekväma sättet att fixa festen. <br />
           Jag erbjuder ett brett sortiment av porslin, glas med mera som hjälper dig att sätta guldkant på ditt event, oavsett om det är en bröllopsfest, födelsedagskalas eller företagsevent. 

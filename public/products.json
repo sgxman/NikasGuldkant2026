@@ -328,8 +328,8 @@
       "categoryName": "servering",
       "subcategoryName": "ovrigt",
       "price": "5",
-      "image": "obj-karaff.webp",
-      "imageBase": "obj-karaff",
+      "image": "obj-karaff-randig.webp",
+      "imageBase": "obj-karaff-randig",
       "description": "Karaff för vatten eller vin. Rymmer XX l.",
       "details": "",
       "available": "23"
@@ -388,8 +388,8 @@
         "categoryName": "servering",
         "subcategoryName": "ovrigt",
         "price": "20",
-        "image": "obj-karaff.webp",
-        "imageBase": "obj-karaff",
+        "image": "obj-karaff-slat.webp",
+        "imageBase": "obj-karaff-slat",
         "description": "Slät vatten eller vinkaraff. Rymmer XX cl.",
         "details": "",
         "available": "4"
