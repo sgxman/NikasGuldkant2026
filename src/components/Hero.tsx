@@ -8,7 +8,7 @@ interface HeroProps {
 
 export default function Hero({ title, subtitle, image, showNikasGuldkantText }: HeroProps) {
   return (
-    <div className="relative w-full aspect-[8/5] md:aspect-[16/7] overflow-hidden">
+    <div className="relative w-full aspect-[8/5] md:aspect-[16/7] lg:max-h-[70vh] overflow-hidden">
       <div
         className="absolute inset-0 bg-cover bg-top"
         style={{ backgroundImage: `url(${image})` }}
