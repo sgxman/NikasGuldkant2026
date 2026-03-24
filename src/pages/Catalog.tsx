@@ -126,7 +126,7 @@ export default function Catalog({ initialCategory, initialSubcategory, onNavigat
             <button
               key={product.id}
               onClick={() => onNavigate('product-detail', { id: product.id, category: selectedCategory, subcategory: selectedSubcategory })}
-              className="bg-white rounded-sm border border-stone-200 overflow-hidden hover:shadow-lg transition-all group text-left"
+              className="bg-white rounded-sm border border-stone-200 overflow-hidden hover:shadow-lg transition-all group text-left flex flex-col"
             >
               <div className="aspect-square overflow-hidden">
                 <ResponsiveImage
