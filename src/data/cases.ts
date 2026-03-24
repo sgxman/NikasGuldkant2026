@@ -58,6 +58,28 @@ export const cases = [
       'idenor-005',
       'idenor-006'
     ],
+    season: 'Sommar'
+  },
+  {
+    id: '4',
+    title: 'Halloweenfest',
+    type: 'Event',
+    guests: 80,
+    image: createInspirationImageSet('halloween-001', { defaultWidth: 800 }).src,
+    imageSrcSet: createInspirationImageSet('halloween-001', { defaultWidth: 800 }).srcSet,
+    imageSizes: '(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw',
+    description: 'Halloweenfest.',
+    fullDescription: 'En Halloweenfest med temat Vampire ball för 80 personer. Temat hölls genomgående i både dekorationer, mat och dryck. Med stora detaljer som svart tyll och ljusslingor och maffiga bordsarrangemang blev det skrämmande lyckat.  ',
+    products: ['Stolsöverdrag', 'Dukar', 'Ljusslingor', 'Tyllgardiner', 'Dekorationer', 'Porslin', 'Glas'],
+    images: [
+      'halloween-001',
+      'halloween-003',
+      'halloween-004',
+      'halloween-005',
+      'halloween-006',
+      'halloween-002'
+    ],
     season: 'Höst'
+
   }
 ];
