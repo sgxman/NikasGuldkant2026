@@ -17,19 +17,29 @@ export default function Home({ onNavigate }: HomeProps) {
 
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
       {/* a larger welcome text */}
-      <div className="text-center text-stone-800 mb-12">
+      <div className="text-center text-stone-800 mb-12 max-w-prose mx-auto">
         <h2 className="text-3xl font-serif italic mb-4">Välkommen till<br />Nikas Guldkant</h2>
         <p className="text-lg leading-relaxed">
-          Välkommen till Nikas Guldkant – det bekväma sättet att fixa festen. <br />
-          Jag erbjuder ett brett sortiment av porslin, glas med mera som hjälper dig att sätta guldkant på ditt event, oavsett om det är en bröllopsfest, födelsedagskalas eller företagsevent. 
-          Det finns ingen nedre gräns för vad du kan hyra, det kan vara allt från några extra vinglas till en komplett dukning för 150 personer. <br />
-          Med personlig service och noga utvalda detaljer gör jag det enkelt och tryggt för dej att skapa en fest som både du och dina gäster kommer att minnas länge. <br />
-          Det ska vara smidigt, det ska vara enkelt och du ska kunna fokusera helt på att njuta av tillställningen. <br />
-          Kika runt på sidan, kolla sortimentet och hör av dej så pratar vi igenom vad just du behöver.<br />
+           - det bekväma sättet att fixa festen.
+        </p>
+        <p className="text-lg leading-relaxed mt-4">
+          Jag erbjuder ett brett sortiment av porslin, glas med mera som hjälper dig att sätta guldkant på ditt event, 
+          oavsett om det är en bröllopsfest, födelsedagskalas eller företagsevent.<br />
+          Det finns ingen nedre gräns för vad du kan hyra, det kan vara allt från några extra vinglas till en komplett dukning för 150 personer.
+        </p>
+        <p className="text-lg leading-relaxed mt-4">
+          Med personlig service och noga utvalda detaljer gör jag det enkelt och tryggt för dej att 
+          skapa en fest som både du och dina gäster kommer att minnas länge.<br />
+          Det ska vara smidigt, det ska vara enkelt och du ska kunna
+           fokusera helt på att njuta av tillställningen.<br />
+          Kika runt på sidan, kolla sortimentet och hör av dej så pratar vi 
+          igenom vad just du behöver.
+        </p>
+        <p className="text-lg leading-relaxed mt-8">
+          Jag ser fram emot ditt samtal.
         
-          Jag ser fram emot ditt samtal. <br />
-        <br />
-        
+        </p>
+        <p className="text-lg leading-relaxed mt-8">
           <span className="font-lavishly text-4xl">Nika</span>
         </p>
       </div>

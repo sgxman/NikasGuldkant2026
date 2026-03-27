@@ -3,6 +3,7 @@ import Hero from '../components/Hero';
 import { fetchCategories, productsjsonurl } from '../data/products';
 import ResponsiveImage from '../components/ResponsiveImage';
 import { resolveImageSources, withBaseUrl } from '../utils/images';
+import { Construction, Hammer } from 'lucide-react';
 
 interface CatalogProps {
   initialCategory?: string;
@@ -72,6 +73,15 @@ export default function Catalog({ initialCategory, initialSubcategory, onNavigat
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+
+        <div className="text-center text-stone-800 mb-12">
+          <p className="text-lg leading-relaxed italic">
+            <Hammer className='inline-block mr-2' /> 
+            Sidan är under uppbyggnad och sortimentet kommer att fyllas på. <br />
+            Hör av dej om det är något särskilt du söker.
+          </p>
+        </div>
+
         <div className="mb-12">
           <div className="flex flex-wrap gap-3 justify-center">
             {categories.map(cat => (
