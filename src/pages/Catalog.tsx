@@ -15,8 +15,8 @@ export default function Catalog({ initialCategory, initialSubcategory, onNavigat
   const [selectedCategory, setSelectedCategory] = useState(initialCategory || 'all');
   const [selectedSubcategory, setSelectedSubcategory] = useState(initialSubcategory || 'all');
   const [categories, setCategories] = useState<{ id: string; name: string }[]>([]);
-  const [subcategoriesByCategory, setSubcategoriesByCategory] = useState<Record<string, { id: string; name: string }[]>>({});
-  const [products, setProducts] = useState<any[]>([]);
+  const [subcategoriesByCategory, setSubcategoriesByCategory] = useState<Record<string, { id: string; name: string }[]>>({});  const [categorySortOrder, setCategorySortOrder] = useState<Record<string, number>>({});
+  const [subcategorySortOrder, setSubcategorySortOrder] = useState<Record<string, Record<string, number>>>({});  const [products, setProducts] = useState<any[]>([]);
 
   useEffect(() => {
     if (initialCategory) {
@@ -30,10 +30,19 @@ export default function Catalog({ initialCategory, initialSubcategory, onNavigat
       const formattedCategories = fetchedCategories.map(cat => ({ id: cat.name, name: cat.title }));
       setCategories([{ id: 'all', name: 'Alla produkter' }, ...formattedCategories]);
       const formattedSubcategories: Record<string, { id: string; name: string }[]> = {};
+      const catSortOrder: Record<string, number> = {};
+      const subSortOrder: Record<string, Record<string, number>> = {};
       fetchedCategories.forEach(cat => {
         formattedSubcategories[cat.name] = cat.subcategories.map(sub => ({ id: sub.name, name: sub.title }));
+        catSortOrder[cat.name] = cat.sortOrder ?? 999;
+        subSortOrder[cat.name] = {};
+        cat.subcategories.forEach(sub => {
+          subSortOrder[cat.name][sub.name] = sub.sortOrder ?? 999;
+        });
       });
       setSubcategoriesByCategory(formattedSubcategories);
+      setCategorySortOrder(catSortOrder);
+      setSubcategorySortOrder(subSortOrder);
     });
   }, [initialCategory]);
 
@@ -44,25 +53,46 @@ export default function Catalog({ initialCategory, initialSubcategory, onNavigat
       .then(data => setProducts(data.products));
   }, []);
 
+  useEffect(() => {
+    if (products.length === 0 || Object.keys(categorySortOrder).length === 0) return;
+    products.forEach(product => {
+      if (!(product.categoryName in categorySortOrder)) {
+        console.warn(`Product id=${product.id} "${product.name}" has unknown categoryName: "${product.categoryName}"`);
+      } else if (product.subcategoryName && !(product.subcategoryName in (subcategorySortOrder[product.categoryName] ?? {}))) {
+        console.warn(`Product id=${product.id} "${product.name}" has unknown subcategoryName: "${product.subcategoryName}" in category "${product.categoryName}"`);
+      }
+    });
+  }, [products, categorySortOrder, subcategorySortOrder]);
+
   const availableSubcategories = selectedCategory === 'all'
     ? []
     : subcategoriesByCategory[selectedCategory] || [];
 
-  const filteredProducts = products.filter(product => {
-    if (selectedCategory === 'all') {
-      return true;
-    }
+  const filteredProducts = products
+    .filter(product => {
+      if (selectedCategory === 'all') {
+        return true;
+      }
 
-    if (product.categoryName !== selectedCategory) {
-      return false;
-    }
+      if (product.categoryName !== selectedCategory) {
+        return false;
+      }
 
-    if (selectedSubcategory === 'all') {
-      return true;
-    }
+      if (selectedSubcategory === 'all') {
+        return true;
+      }
 
-    return product.subcategoryName === selectedSubcategory;
-  });
+      return product.subcategoryName === selectedSubcategory;
+    })
+    .sort((a, b) => {
+      const catA = categorySortOrder[a.categoryName] ?? 999;
+      const catB = categorySortOrder[b.categoryName] ?? 999;
+      if (catA !== catB) return catA - catB;
+      const subA = (subcategorySortOrder[a.categoryName]?.[a.subcategoryName]) ?? 999;
+      const subB = (subcategorySortOrder[b.categoryName]?.[b.subcategoryName]) ?? 999;
+      if (subA !== subB) return subA - subB;
+      return a.id - b.id;
+    });
 
   return (
     <div>
@@ -70,6 +100,7 @@ export default function Catalog({ initialCategory, initialSubcategory, onNavigat
         title="Sortiment"
         subtitle=""
         image={withBaseUrl('/images/webp-800/meny-sortiment.webp')}
+        maxHeightVh={70}
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -84,7 +115,11 @@ export default function Catalog({ initialCategory, initialSubcategory, onNavigat
 
         <div className="mb-12">
           <div className="flex flex-wrap gap-3 justify-center">
-            {categories.map(cat => (
+            {[...categories].sort((a, b) => {
+              if (a.id === 'all') return -1;
+              if (b.id === 'all') return 1;
+              return (categorySortOrder[a.id] ?? 999) - (categorySortOrder[b.id] ?? 999);
+            }).map(cat => (
               <button
                 key={cat.id}
                 onClick={() => {
@@ -114,7 +149,9 @@ export default function Catalog({ initialCategory, initialSubcategory, onNavigat
                 Alla i kategorin
               </button>
 
-              {availableSubcategories.map(subcat => (
+              {[...availableSubcategories].sort((a, b) =>
+                (subcategorySortOrder[selectedCategory]?.[a.id] ?? 999) - (subcategorySortOrder[selectedCategory]?.[b.id] ?? 999)
+              ).map(subcat => (
                 <button
                   key={subcat.id}
                   onClick={() => setSelectedSubcategory(subcat.id)}
@@ -138,11 +175,11 @@ export default function Catalog({ initialCategory, initialSubcategory, onNavigat
               onClick={() => onNavigate('product-detail', { id: product.id, category: selectedCategory, subcategory: selectedSubcategory })}
               className="bg-white rounded-sm border border-stone-200 overflow-hidden hover:shadow-lg transition-all group text-left flex flex-col"
             >
-              <div className="aspect-square overflow-hidden">
+              <div className="aspect-square overflow-hidden bg-stone-50">
                 <ResponsiveImage
                   {...resolveImageSources(product.image, product.imageBase)}
                   alt={product.name}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
               <div className="p-4">

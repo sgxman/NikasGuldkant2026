@@ -5,12 +5,15 @@ interface HeroProps {
   image: string;
   showNikasGuldkantText?: boolean;
   bgVerticalPosition?: 'top' | 'center' | 'bottom';
-  maxHeightVh?: string;
+  maxHeightVh?: number;
 }
 
-export default function Hero({ title, subtitle, image, showNikasGuldkantText, bgVerticalPosition = 'top', maxHeightVh = '70' }: HeroProps) {
+export default function Hero({ title, subtitle, image, showNikasGuldkantText, bgVerticalPosition = 'top', maxHeightVh }: HeroProps) {
   return (
-    <div className={`relative w-full aspect-[8/5] md:aspect-[16/7] lg:max-h-[${maxHeightVh}vh] overflow-hidden`}>
+    <div
+      className="relative w-full aspect-[8/5] md:aspect-[16/7] overflow-hidden"
+      style={maxHeightVh ? { maxHeight: `${maxHeightVh}vh` } : undefined}
+    >
       <div
         className={`absolute inset-0 bg-cover bg-${bgVerticalPosition}`}
         style={{ backgroundImage: `url(${image})` }}

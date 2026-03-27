@@ -17,6 +17,7 @@ const contactEmail = siteConfig.contactEmail;
         subtitle=""
         image={withBaseUrl('/images/webp-800/contact2.webp')}
         bgVerticalPosition="center"
+        maxHeightVh={70}
       />
             
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">

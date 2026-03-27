@@ -14,6 +14,7 @@ export default function Inspiration({ onNavigate }: InspirationProps) {
         title="Inspiration"
         subtitle=""
         image={withBaseUrl('/images/webp-800/insp_skumpa.webp')}
+        maxHeightVh={70}
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">

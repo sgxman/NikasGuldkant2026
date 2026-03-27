@@ -12,7 +12,7 @@ export default function Home({ onNavigate }: HomeProps) {
         title=""
         subtitle=""
         image={withBaseUrl('/images/torn.jpg')}
-        maxHeightVh='100'
+        maxHeightVh={100}
       />
 
 

@@ -19,12 +19,14 @@ export interface Subcategory {
   id: number;
   name: string;
   title: string;
+  sortOrder?: number;
 }
 
 export interface Category {
   id: number;
   name: string;
   title: string;
+  sortOrder?: number;
   subcategories: Subcategory[];
 }
 

@@ -4,41 +4,46 @@
       "id": 100,
       "name": "glas",
       "title": "Glas",
+      "sortOrder": 3,
       "subcategories": [
-        { "id": 110, "name": "vinglas", "title": "Vinglas" },
-        { "id": 120, "name": "ovrigaglas", "title": "Övriga glas" }
+        { "id": 110, "name": "vinglas", "title": "Vinglas", "sortOrder": 1 },
+        { "id": 120, "name": "ovrigaglas", "title": "Övriga glas", "sortOrder": 2 }
       ]
     },
     {
       "id": 200,
       "name": "bestick",
       "title": "Bestick",
+      "sortOrder": 2,
       "subcategories": []
     },
     {
       "id": 300,
       "name": "servering",
       "title": "Servering",
+      "sortOrder": 4,
       "subcategories": [ ]
     },
     {
       "id": 400,
       "name": "porslin",
       "title": "Porslin",
+      "sortOrder": 1,
       "subcategories": [
-        { "id": 410, "name": "koppar", "title": "Koppar" },
-        { "id": 420, "name": "tallrikar", "title": "Tallrikar" }
+        { "id": 410, "name": "koppar", "title": "Koppar", "sortOrder": 2 },
+        { "id": 420, "name": "tallrikar", "title": "Tallrikar", "sortOrder": 1 }
       ]
     },
     {
       "id": 500,
       "name": "dekor",
       "title": "Dekor",
+      "sortOrder": 5,
       "subcategories": [
-        { "id": 510, "name": "ljusstakar", "title": "Ljusstakar" },
-        { "id": 520, "name": "ljusslingor", "title": "Ljusslingor" },
-        { "id": 530, "name": "tyg", "title": "Tyg" },
-        { "id": 540, "name": "ovrigt", "title": "Övrigt" }
+        { "id": 510, "name": "ljusstakar", "title": "Ljusstakar", "sortOrder": 1 },
+        { "id": 520, "name": "ljusslingor", "title": "Ljusslingor", "sortOrder": 2 },
+        { "id": 530, "name": "tyg", "title": "Tyg", "sortOrder": 3 },
+        { "id": 540, "name": "ovrigt", "title": "Övrigt", "sortOrder": 4 }
       ]
     }
   ],
@@ -68,7 +73,7 @@
       "available": "60"
     },
     {
-      "id": 113,
+      "id": 140,
       "name": "Termos",
       "categoryName": "servering",
       "subcategoryName": "",
@@ -125,17 +130,17 @@
       "imageBase": "obj-thekopp",
       "description": "Höjd 11 cm. Passar 2,5 dl.",
       "details": "",
-      "available": "XX, ca 40 st "
+      "available": "ca 40 st "
     },
     {
       "id": 117,
       "name": "Varmrättstallrik",
       "categoryName": "porslin",
       "subcategoryName": "tallrikar",
-      "price": "",
+      "price": "5",
       "image": "obj-tallrik-varmratt.webp",
       "imageBase": "obj-tallrik-varmratt",
-      "description": "Storlek 24 cm.",
+      "description": "Enkel och stilren tallrik. Inga krusiduller.Storlek 24 cm.",
       "details": "",
       "available": "170"
     },
@@ -143,25 +148,25 @@
       "id": 120,
       "name": "Dispenser",
       "categoryName": "servering",
-      "subcategoryName": "dispenser",
+      "subcategoryName": "",
       "price": "30",
       "image": "obj-dispenser.slat.webp",
       "imageBase": "obj-dispenser.slat",
-      "description": "Stor slät glasdispenser med tappkran. Rymmer 10 l.",
+      "description": "Stor slät glasdispenser med tappkran. Rymmer ca 8 l.",
       "details": "",
-      "available": "XX"
+      "available": "2"
     },
     {
       "id": 121,
       "name": "Dispenser",
       "categoryName": "servering",
-      "subcategoryName": "dispenser",
+      "subcategoryName": "",
       "price": "30",
       "image": "obj-dispenser-rutig.webp",
       "imageBase": "obj-dispenser-rutig",
-      "description": "Stor rutig glasdispenser med tappkran. Rymmer XX l.",
+      "description": "Stor rutig glasdispenser med tappkran. Rymmer ca 8 l.",
       "details": "",
-      "available": "xx"
+      "available": "2"
     },
     {
       "id": 122,
@@ -188,7 +193,7 @@
       "available": "90"
     },
     {
-      "id": 124,
+      "id": 147,
       "name": "Soppskål",
       "categoryName": "porslin",
       "subcategoryName": "tallrikar",
@@ -207,27 +212,27 @@
       "price": "5",
       "image": "obj-avecglas-pa-fot.webp",
       "imageBase": "obj-avecglas-pa-fot",
-      "description": "Litet avecglas på fot. Höjd 10 cm.Rymmer 6 cl.",
+      "description": "Litet avecglas på fot. Höjd 10 cm. Rymmer 6 cl.",
       "details": "",
       "available": "48"
     },
     {
       "id": 126,
       "name": "Snapsglashållare",
-      "categoryName": "glas",
-      "subcategoryName": "ovrigaglas",
-      "price": "5",
+      "categoryName": "servering",
+      "subcategoryName": "",
+      "price": "15",
       "image": "obj-snapsglashallare-inkl-glas.webp",
       "imageBase": "obj-snapsglashallare-inkl-glas",
-      "description": "Praktisk glashållare i metall med 10 glas. Fungerar även att ställa små snapsflaskor i hållaren.",
+      "description": "Praktisk glashållare i metall med plats för 10 glas. Glas finns i egen kategori. Fungerar även att ställa små snapsflaskor i hållaren.",
       "details": "",
-      "available": "XX tror 6 st"
+      "available": "6 st"
     },
     {
-      "id": 127,
+      "id": 113,
       "name": "Vattenflaska",
       "categoryName": "servering",
-      "subcategoryName": "vattenflaskor",
+      "subcategoryName": "",
       "price": "5",
       "image": "obj-vattenflaska-bubblig.webp",
       "imageBase": "obj-vattenflaska-bubblig",
@@ -241,11 +246,11 @@
       "categoryName": "glas",
       "subcategoryName": "ovrigaglas",
       "price": "5",
-      "image": "bild_saknas.webp",
-      "imageBase": "bild_saknas",
+      "image": "obj-vattenglas2.webp",
+      "imageBase": "obj-vattenglas2",
       "description": "Enkelt stapelbart vattenglas. Höjd 9 cm. Rymmer 1,5 dl.",
       "details": "",
-      "available": "XX tror ca 150"
+      "available": "Ca 150"
     },
     {
       "id": 129,
@@ -287,7 +292,7 @@
       "id": 132,
       "name": "Vinkylare med handtag",
       "categoryName": "servering",
-      "subcategoryName": "ovrigt",
+      "subcategoryName": "",
       "price": "20",
       "image": "obj-vinkylare-handtag.webp",
       "imageBase": "obj-vinkylare-handtag",
@@ -296,10 +301,10 @@
       "available": "1"
     },
     {
-      "id": 133,
+      "id": 127,
       "name": "Vinkylare",
       "categoryName": "servering",
-      "subcategoryName": "ovrigt",
+      "subcategoryName": "",
       "price": "20",
       "image": "obj-vinkylare-rundad.webp",
       "imageBase": "obj-vinkylare-rundad",
@@ -317,13 +322,13 @@
       "imageBase": "obj-bordspratare",
       "description": "Bordspratare perfekt för att visa bordsnummer på borden, eller innehåll i buffen, eller priser i baren.",
       "details": "",
-      "available": "XX tror ca 14"
+      "available": "ca 14"
     },
     {
-      "id": 135,
+      "id": 133,
       "name": "Karaff",
       "categoryName": "servering",
-      "subcategoryName": "ovrigt",
+      "subcategoryName": "",
       "price": "5",
       "image": "obj-karaff-randig.webp",
       "imageBase": "obj-karaff-randig",
@@ -359,7 +364,7 @@
       "id": 138,
       "name": "Mjölkkanna liten",
       "categoryName": "servering",
-      "subcategoryName": "ovrigt",
+      "subcategoryName": "",
       "price": "10",
       "image": "obj-mjolkkanna-liten.webp",
       "imageBase": "obj-mjolkkanna-liten",
@@ -371,7 +376,7 @@
       "id": 139,
       "name": "Mjölkkanna stor",
       "categoryName": "servering",
-      "subcategoryName": "ovrigt",
+      "subcategoryName": "",
       "price": "10",
       "image": "obj-mjolkkanna-stor.webp",
       "imageBase": "obj-mjolkkanna-stor",
@@ -380,10 +385,10 @@
       "available": "1"
     },
     {
-        "id": 140,
+        "id": 135,
         "name": "Karaff slät",
         "categoryName": "servering",
-        "subcategoryName": "ovrigt",
+        "subcategoryName": "",
         "price": "20",
         "image": "obj-karaff-slat.webp",
         "imageBase": "obj-karaff-slat",
@@ -395,7 +400,7 @@
         "id": 141,
         "name": "Sockerskål",
         "categoryName": "servering",
-        "subcategoryName": "ovrigt",
+        "subcategoryName": "",
         "price": "10",
         "image": "bild_saknas.webp",
         "imageBase": "bild_saknas",
@@ -416,7 +421,7 @@
         "available": "100"
     },
     {
-        "id": 143,
+        "id": 146,
         "name": "Matsked",
         "categoryName": "bestick",
         "subcategoryName": "",
@@ -425,25 +430,25 @@
         "imageBase": "obj-sked",
         "description": "Matsked.",
         "details": "",
-        "available": "100"
+        "available": "100+"
     },
     {
         "id": 144,
         "name": "Vattenglas",
         "categoryName": "glas",
-        "subcategoryName": "ovrigt",
+        "subcategoryName": "ovrigaglas",
         "price": "5",
         "image": "obj-vattenglas.webp",
         "imageBase": "obj-vattenglas",
         "description": "För vatten eller till efterätt. Höjd 6 cm, bredd 8 cm. Rymmer 1,5 dl.",
         "details": "",
-        "available": "100"
+        "available": "100+"
     },
     {
         "id": 145,
         "name": "Kniv",
         "categoryName": "bestick",
-        "subcategoryName": "knivar",
+        "subcategoryName": "",
         "price": "5",
         "image": "obj-kniv.webp",
         "imageBase": "obj-kniv",
@@ -452,10 +457,10 @@
         "available": "275"
     },
     {
-        "id": 146,
+        "id": 143,
         "name": "Gaffel",
         "categoryName": "bestick",
-        "subcategoryName": "gaffel",
+        "subcategoryName": "",
         "price": "5",
         "image": "obj-gaffel.webp",
         "imageBase": "obj-gaffel",
@@ -464,14 +469,14 @@
         "available": "275"
     },
     {
-        "id": 147,
+        "id": 124,
         "name": "Assiette",
         "categoryName": "porslin",
         "subcategoryName": "tallrikar",
         "price": "5",
         "image": "obj-assiette.webp",
         "imageBase": "obj-assiette",
-        "description": "Assiette till förrätt eller efterrätt. Bredd 19 cm.",
+        "description": "Enkel och stilren tallrik. Inga krusiduller.Storlek 19 cm.",
         "details": "",
         "available": "250"
     },
@@ -479,25 +484,25 @@
         "id": 148,
         "name": "Dessertsked",
         "categoryName": "bestick",
-        "subcategoryName": "sked",
+        "subcategoryName": "",
         "price": "5",
         "image": "obj-dessertsked.webp",
         "imageBase": "obj-dessertsked",
         "description": "Dessertsked.",
         "details": "",
-        "available": "XX minst 100"
+        "available": "100+"
     },
     {
         "id": 149,
         "name": "Tesked",
         "categoryName": "bestick",
-        "subcategoryName": "sked",
+        "subcategoryName": "",
         "price": "5",
         "image": "obj-tesked.webp",
         "imageBase": "obj-tesked",
         "description": "Tesked till kaffet eller tårtan",
         "details": "",
-        "available": "XX minst 100. Finns flera modeller"
+        "available": "100+"
     },
     {
         "id": 150,
@@ -505,9 +510,9 @@
         "categoryName": "dekor",
         "subcategoryName": "ovrigt",
         "price": "300",
-        "image": "bild_saknas.webp",
-        "imageBase": "bild_saknas",
-        "description": "Mäktigt stort champagnetorn. Höjd XX cm.",
+        "image": "obj-torn.webp",
+        "imageBase": "obj-torn",
+        "description": "Mäktigt stort champagnetorn. Funkar att ställa skumpaglas i eller varför inte servera snittar eller frukt från. Höjd XX cm.",
         "details": "",
         "available": "1"
     },
@@ -515,12 +520,12 @@
         "id": 151,
         "name": "Serveringsbricka",
         "categoryName": "servering",
-        "subcategoryName": "ovrigt",
-        "price": "20",
+        "subcategoryName": "",
+        "price": "15",
         "image": "bild_saknas.webp",
         "imageBase": "bild_saknas",
         "description": "Serveringsbricka med no slip-yta. Näst intill ett måste om man brickserverar många avecglas. " ,
-        "available": "1"
+        "available": "6"
     },
     {
         "id": 152,
@@ -563,7 +568,7 @@
       "name": "Ljusnät",
       "categoryName": "dekor",
       "subcategoryName": "ljusslingor",
-      "price": "2025",
+      "price": "20",
       "image": "obj-ljusnat.webp",
       "imageBase": "obj-ljusnat",
       "description": "Ljusnät egentligen tänkt för buskar men som funkar perfekt att använda som ljusdekortation i festlokaler. Går att använda både inne och ute.",
@@ -587,7 +592,7 @@
       "name": "Ljusslinga med glödlampskänsla ",
       "categoryName": "dekor",
       "subcategoryName": "ljusslingor",
-      "price": "20",
+      "price": "25",
       "image": "obj-ljusslinga-glob.webp",
       "imageBase": "obj-ljusslinga-glob",
       "description": "Ljusslinga med lite mer retrokänsla än den vanliga ledslingan.",
@@ -595,7 +600,7 @@
       "available": "2"
      },
      {
-      "id": 158,
+      "id": 168,
       "name": "Referensbild på tallrikar",
       "categoryName": "porslin",
       "subcategoryName": "tallrikar",
@@ -604,43 +609,43 @@
       "imageBase": "obj-kombo-tallrikar",
       "description": "Referensbild på tallrikar. Denna kombination med varmrätt och assiette är tillsammans med bestick den vanligaste uthyrningen vi har.",
       "details": "",
-      "available": "150"
+      "available": "150+"
       },
       {
         "id": 159,
         "name": "Referensbild på bestick", 
           "categoryName": "bestick",
-          "subcategoryName": "bestick",
+          "subcategoryName": "",
           "price": "10",
           "image": "obj-kombo-bestick.webp",
           "imageBase": "obj-kombo-bestick",
           "description": "Referensbild på bestick. Bestickspar tillsammans med tallrikar den vanligaste uthyrningen vi har.",
           "details": "",
-          "available": "300" 
+          "available": "300+" 
         },
         {
           "id": 160,
-          "name": "lågt shotglas",
+          "name": "Lågt shotglas",
           "categoryName": "glas",
-          "subcategoryName": "ovrigt",
+          "subcategoryName": "ovrigaglas",
           "price": "5",
           "image": "obj-lag-snapsglas.webp",
           "imageBase": "obj-lag-snapsglas",
           "description": "Lågt shotglas. Funkar även som avecglas och står stadigare än glasen på fot. höjd 6 cm. Rymmer 4 cl.",
           "details": "",
-          "available": "XX"
+          "available": "ca 30"
          },
          {
           "id": 161,
           "name": "Champagneglas",
           "categoryName": "glas",
-          "subcategoryName": "ovrigt",
-          "price": "105",
+          "subcategoryName": "vinglas",
+          "price": "5",
           "image": "obj-champagneglas.webp",
           "imageBase": "obj-champagneglas",
           "description": "Champagneglas med smal kupa. Höjd 20 cm. Rymmer 1,5 dl.",
           "details": "",
-          "available": "200"
+          "available": "200+"
          }, 
          {
           "id": 162,
@@ -650,7 +655,7 @@
           "price": "50",
           "image": "bild_saknas.webp",  
           "imageBase": "bild_saknas",
-          "description": "Stor zinkbalja för att kyla dryck i eller varför inte ett gäng filtar i under festen. Diameter XX cm, höjd XX cm. ",
+          "description": "Stor zinkbalja för att kyla dryck i eller varför inte lägga i ett gäng filtar i under festen. Diameter XX cm, höjd XX cm. ",
           "details": "",
           "available": "2" 
           },
@@ -662,7 +667,7 @@
              "price": "50",
              "image": "bild_saknas.webp",  
              "imageBase": "bild_saknas",
-             "description": "Liten zinkbalja för att kyla dryck i eller varför inte ett gäng filtar i under festen. Diameter XX cm, höjd XX cm. ",
+             "description": "Liten zinkbalja för att kyla dryck i eller varför inte ett lägga ett gäng filtar i under festen. Diameter XX cm, höjd XX cm. ",
              "details": "",
              "available": "2" 
            },
@@ -676,7 +681,7 @@
              "imageBase": "bild_saknas",
              "description": "Vita stolsöverdrag i stretchmaterial för att ge dina stolar ett elegant utseende under festen. Passar de flesta standardstolar utan armstöd med tydliga fötter. ",
              "details": "",
-             "available": "XX minst 100" 
+             "available": "100+" 
            }, 
            {
             "id": 165,
@@ -688,7 +693,7 @@
              "imageBase": "bild_saknas",
              "description": "Svarta stolsöverdrag i stretchmaterial för att ge dina stolar ett elegant utseende under festen. Passar de flesta standardstolar utan armstöd med tydliga fötter. ",
              "details": "",
-             "available": "XX minst 100" 
+             "available": "100+" 
            },
            {
             "id": 166,
@@ -700,7 +705,7 @@
              "imageBase": "bild_saknas",
              "description": "Vita filtar i fleece för att hålla dig och dina gäster varma under festen. Även svenska sommarnätter kan vara kyliga. ",
              "details": "",
-             "available": "XX minst 100" 
+             "available": "100+" 
            },
            {
             "id": 167,
@@ -712,20 +717,33 @@
              "imageBase": "bild_saknas",
              "description": "Liten flaska för mjölk med knäppkork. Höjd 19 cm. Rymmer 2,5 dl.",
              "details": "",
-             "available": "XX" 
+             "available": "12" 
            },
            {
-            "id": 168,
+            "id": 158,
             "name": "Djuptallrik",
              "categoryName": "porslin",
-             "subcategoryName": "",
+             "subcategoryName": "tallrikar",
              "price": "5",
-             "image": "bild_saknas.webp",  
-             "imageBase": "bild_saknas",
+             "image": "obj-djuptallrik.webp",  
+             "imageBase": "obj-djuptallrik",
              "description": "Djuptallrik för soppa eller pasta. Diameter 23 cm.",
              "details": "",
-             "available": "XX" 
+             "available": "ca 30" 
+           },
+           {
+            "id": 169,
+            "name": "Linnedukar och servetter",
+             "categoryName": "dekor",
+             "subcategoryName": "tyg",
+             "price": "100/15",
+             "image": "bild_saknas.webp",  
+             "imageBase": "bild_saknas",
+             "description": "Jag kan förmedla linnedukar och linneservetter vid annan uthyrning.",
+             "details": "",
+             "available": "50+" 
            }
+
 
   
 
