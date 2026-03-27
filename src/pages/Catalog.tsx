@@ -3,7 +3,7 @@ import Hero from '../components/Hero';
 import { fetchCategories, productsjsonurl } from '../data/products';
 import ResponsiveImage from '../components/ResponsiveImage';
 import { resolveImageSources, withBaseUrl } from '../utils/images';
-import { Construction, Hammer } from 'lucide-react';
+import { Hammer } from 'lucide-react';
 
 interface CatalogProps {
   initialCategory?: string;
