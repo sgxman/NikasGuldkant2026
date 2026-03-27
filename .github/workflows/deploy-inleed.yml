@@ -37,4 +37,4 @@ jobs:
           username: ${{ secrets.INLEED_USERNAME }}
           password: ${{ secrets.INLEED_PASSWORD }}
           uploads: |
-            ./dist/ => /domains/nikasguldkant.se/public_html/
+            ./dist/ => /home/s143454/domains/nikasguldkant.se/public_html/
