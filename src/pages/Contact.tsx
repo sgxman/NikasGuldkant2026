@@ -1,11 +1,12 @@
 import Hero from '../components/Hero';
 import { PhoneCall, Send, MapPin, CalendarClock } from 'lucide-react';
+import { siteConfig } from '../config/siteConfig';
 
 export default function Contact() {
 
-  const contactPhone = import.meta.env.VITE_CONTACT_PHONE;
-  const contactPhoneSWE = import.meta.env.VITE_CONTACT_PHONE_SWE;
-  const contactEmail = import.meta.env.VITE_CONTACT_EMAIL;
+const contactPhone = siteConfig.contactPhone;
+const contactPhoneSWE = siteConfig.contactPhoneSWE;
+const contactEmail = siteConfig.contactEmail;
 
 
   return (

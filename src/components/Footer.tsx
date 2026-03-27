@@ -1,4 +1,5 @@
 import { PhoneCall, Send, MapPin } from 'lucide-react';
+import { siteConfig } from '../config/siteConfig';
 
 interface FooterProps {
   onNavigate: (page: string) => void;
@@ -6,9 +7,9 @@ interface FooterProps {
 
 export default function Footer({ onNavigate }: FooterProps) {
 
-  const contactPhone = import.meta.env.VITE_CONTACT_PHONE;
-  const contactPhoneSWE = import.meta.env.VITE_CONTACT_PHONE_SWE;
-  const contactEmail = import.meta.env.VITE_CONTACT_EMAIL;
+const contactPhone = siteConfig.contactPhone;
+const contactPhoneSWE = siteConfig.contactPhoneSWE;
+const contactEmail = siteConfig.contactEmail;
 
   return (
     <footer className="bg-stone-800 text-stone-200">
