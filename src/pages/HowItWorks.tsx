@@ -1,4 +1,5 @@
 import Hero from '../components/Hero';
+import { withBaseUrl } from '../utils/images';
 
 export default function HowItWorks() {
   return (
@@ -6,7 +7,7 @@ export default function HowItWorks() {
       <Hero
         title="Så går det till"
         subtitle=""
-        image="https://images.pexels.com/photos/1395964/pexels-photo-1395964.jpeg?auto=compress&cs=tinysrgb&w=1200"
+        image={withBaseUrl('/images/webp-800/sa-gar-det-till.webp')}
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">

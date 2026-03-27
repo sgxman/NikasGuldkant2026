@@ -83,8 +83,11 @@ export default function Home({ onNavigate }: HomeProps) {
             onClick={() => onNavigate('sa-gar-det-till')}
           >
             <div
-              className="absolute inset-0 bg-cover bg-center"
-              style={{ backgroundImage: `url(https://images.pexels.com/photos/1395964/pexels-photo-1395964.jpeg?auto=compress&cs=tinysrgb&w=1200)` }}
+              className="absolute inset-0 bg-center"
+              style={{ 
+                backgroundImage: createBackgroundImageSet('sa-gar-det-till'),
+                backgroundSize: '100% auto',
+              }}
             >
               <div className="absolute inset-0 bg-gradient-to-b from-stone-900/40 via-stone-900/30 to-stone-900/60" />
             </div>
