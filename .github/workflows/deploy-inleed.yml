@@ -1,0 +1,40 @@
+name: Deploy nikasguldkant.se to Inleed
+
+on:
+  push:
+    branches:
+      - main
+
+concurrency:
+  group: deploy-production
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build site
+        run: npm run build
+
+      - name: Deploy dist to Inleed over SFTP
+        uses: Dylan700/sftp-upload-action@latest
+        with:
+          server: ${{ secrets.INLEED_HOST }}
+          port: ${{ secrets.INLEED_PORT }}
+          username: ${{ secrets.INLEED_USERNAME }}
+          password: ${{ secrets.INLEED_PASSWORD }}
+          uploads: |
+            ./dist/ => /domains/nikasguldkant.se/public_html/
