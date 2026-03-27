@@ -4,13 +4,15 @@ interface HeroProps {
   subtitle: string;
   image: string;
   showNikasGuldkantText?: boolean;
+  bgVerticalPosition?: 'top' | 'center' | 'bottom';
+  maxHeightVh?: string;
 }
 
-export default function Hero({ title, subtitle, image, showNikasGuldkantText }: HeroProps) {
+export default function Hero({ title, subtitle, image, showNikasGuldkantText, bgVerticalPosition = 'top', maxHeightVh = '70' }: HeroProps) {
   return (
-    <div className="relative w-full aspect-[8/5] md:aspect-[16/7] lg:max-h-[70vh] overflow-hidden">
+    <div className={`relative w-full aspect-[8/5] md:aspect-[16/7] lg:max-h-[${maxHeightVh}vh] overflow-hidden`}>
       <div
-        className="absolute inset-0 bg-cover bg-top"
+        className={`absolute inset-0 bg-cover bg-${bgVerticalPosition}`}
         style={{ backgroundImage: `url(${image})` }}
       >
         <div className="absolute inset-0 bg-gradient-to-b from-stone-900/40 via-stone-900/30 to-stone-900/60" />

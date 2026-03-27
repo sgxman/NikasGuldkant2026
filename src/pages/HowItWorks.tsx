@@ -7,7 +7,8 @@ export default function HowItWorks() {
       <Hero
         title="Så går det till"
         subtitle=""
-        image={withBaseUrl('/images/webp-800/sa-gar-det-till.webp')}
+        image={withBaseUrl('/images/webp-800/sagardettill2.webp')}
+        bgVerticalPosition="center"
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
