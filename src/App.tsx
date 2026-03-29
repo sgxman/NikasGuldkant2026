@@ -30,6 +30,20 @@ function App() {
     setNavigationParams(params || {});
   };
 
+  // Uppdatera sidtitel vid navigation
+  useEffect(() => {
+    const titles: Record<string, string> = {
+      'start':              'Nikas Guldkant – Uthyrning i Hudiksvall',
+      'sortiment':          'Sortiment – Nikas Guldkant',
+      'sa-gar-det-till':    'Så går det till – Nikas Guldkant',
+      'inspiration':        'Inspiration – Nikas Guldkant',
+      'kontakt':            'Kontakt – Nikas Guldkant',
+      'product-detail':     'Produkt – Nikas Guldkant',
+      'inspiration-detail': 'Inspiration – Nikas Guldkant',
+    };
+    document.title = titles[currentPage] ?? 'Nikas Guldkant';
+  }, [currentPage]);
+
   // Återställ scroll-position när sidan ändras
   useEffect(() => {
     const savedPosition = scrollPositions.current[currentPage];
