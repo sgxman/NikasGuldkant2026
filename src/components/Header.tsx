@@ -18,8 +18,8 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
   ];
 
   function isDevBranch() {
-    //if current branch is DEV och we are in vscode npm run dev mode, return true
-    return process.env.NODE_ENV === 'development';
+    //if current branch is DEV or url is sgxman.github.io/nikas..... = true
+    return process.env.NODE_ENV === 'development' || window.location.hostname === 'sgxman.github.io';
   }
 
   return (
