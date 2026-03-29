@@ -17,6 +17,11 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
     { id: 'kontakt', label: 'Kontakt' }
   ];
 
+  function isDevBranch() {
+    //if current branch is DEV och we are in vscode npm run dev mode, return true
+    return process.env.NODE_ENV === 'development';
+  }
+
   return (
     <header className="bg-stone-50/95 backdrop-blur-sm sticky top-0 z-50 border-b border-stone-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -30,6 +35,12 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
             </button>
             <span className="text-xs md:text-sm text-stone-600 mt-1">Hudiksvall med omnejd</span>
           </div>
+
+          {isDevBranch() && (
+            <div className="ml-4 px-4 py-1 bg-yellow-300 text-black font-bold text-xs rounded">
+              UTVECKLINGS VERSION !
+            </div>
+          )}
 
           <nav className="hidden md:flex space-x-8">
             {navItems.map(item => (
