@@ -23,8 +23,21 @@ function App() {
   const scrollPositions = useRef<Record<string, number>>({});
 
   const handleNavigate = (page: string, params?: NavigationParams) => {
-    // Spara nuvarande scroll-position
-    scrollPositions.current[currentPage] = window.scrollY;
+    // Skapa en unik nyckel för nuvarande sida + parametrar
+    // Om vi navigerar FRÅN sortiment och params innehåller category/subcategory,
+    // använd dessa för att skapa nyckeln (de är från selectedCategory/selectedSubcategory)
+    const currentKey = currentPage === 'sortiment' 
+      ? `sortiment-${navigationParams.category || 'all'}-${navigationParams.subcategory || 'all'}`
+      : currentPage;
+    
+    // Om vi navigerar från sortiment till produktdetalj, använd de category/subcategory
+    // som skickas i params (från selectedCategory/selectedSubcategory)
+    const keyToSave = (currentPage === 'sortiment' && page === 'product-detail' && params?.category)
+      ? `sortiment-${params.category}-${params.subcategory || 'all'}`
+      : currentKey;
+    
+    // Spara nuvarande scroll-position med rätt nyckel
+    scrollPositions.current[keyToSave] = window.scrollY;
     
     setCurrentPage(page as PageType);
     setNavigationParams(params || {});
@@ -46,16 +59,31 @@ function App() {
 
   // Återställ scroll-position när sidan ändras
   useEffect(() => {
-    const savedPosition = scrollPositions.current[currentPage];
+    const currentKey = currentPage === 'sortiment'
+      ? `sortiment-${navigationParams.category || 'all'}-${navigationParams.subcategory || 'all'}`
+      : currentPage;
+    
+    const savedPosition = scrollPositions.current[currentKey];
     if (savedPosition !== undefined) {
-      // Vänta en frame så att innehållet hinner renderas
-      requestAnimationFrame(() => {
-        window.scrollTo(0, savedPosition);
-      });
+      // Vänta på att innehållet har laddats och renderats
+      const attemptScroll = (attempts = 0) => {
+        const maxScrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+        
+        // Om vi kan scrolla till önskad position, gör det
+        if (maxScrollHeight >= savedPosition || attempts >= 20) {
+          window.scrollTo(0, savedPosition);
+        } else {
+          // Annars, försök igen om 50ms (kortare intervall för bättre UX)
+          setTimeout(() => attemptScroll(attempts + 1), 50);
+        }
+      };
+      
+      // Börja försöka efter att DOM har uppdaterats
+      requestAnimationFrame(() => attemptScroll());
     } else {
       window.scrollTo(0, 0);
     }
-  }, [currentPage]);
+  }, [currentPage, navigationParams.category, navigationParams.subcategory]);
 
   const renderPage = () => {
     switch (currentPage) {

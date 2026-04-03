@@ -125,6 +125,7 @@ export default function Catalog({ initialCategory, initialSubcategory, onNavigat
                 onClick={() => {
                   setSelectedCategory(cat.id);
                   setSelectedSubcategory('all');
+                  window.scrollTo(0, 0);
                 }}
                 className={`px-6 py-2 rounded-lg text-sm font-medium transition-colors ${selectedCategory === cat.id
                   ? 'bg-stone-700 text-white'
@@ -140,7 +141,10 @@ export default function Catalog({ initialCategory, initialSubcategory, onNavigat
           {selectedCategory !== 'all' && (
             <div className="flex flex-wrap gap-3 justify-center mt-6">
               <button
-                onClick={() => setSelectedSubcategory('all')}
+                onClick={() => {
+                  setSelectedSubcategory('all');
+                  window.scrollTo(0, 0);
+                }}
                 className={`px-5 py-2 rounded-lg text-sm font-medium transition-colors ${selectedSubcategory === 'all'
                   ? 'bg-stone-700 text-white'
                   : 'bg-white text-stone-700 border border-stone-300 hover:border-stone-700'
@@ -154,7 +158,10 @@ export default function Catalog({ initialCategory, initialSubcategory, onNavigat
               ).map(subcat => (
                 <button
                   key={subcat.id}
-                  onClick={() => setSelectedSubcategory(subcat.id)}
+                  onClick={() => {
+                    setSelectedSubcategory(subcat.id);
+                    window.scrollTo(0, 0);
+                  }}
                   className={`px-5 py-2 rounded-lg text-sm font-medium transition-colors ${selectedSubcategory === subcat.id
                     ? 'bg-stone-700 text-white'
                     : 'bg-white text-stone-700 border border-stone-300 hover:border-stone-700'
