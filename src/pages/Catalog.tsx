@@ -3,7 +3,7 @@ import Hero from '../components/Hero';
 import { fetchCategories, productsjsonurl } from '../data/products';
 import ResponsiveImage from '../components/ResponsiveImage';
 import { resolveImageSources, withBaseUrl } from '../utils/images';
-import { Hammer } from 'lucide-react';
+import { Hammer, ArrowUp } from 'lucide-react';
 
 interface CatalogProps {
   initialCategory?: string;
@@ -17,6 +17,18 @@ export default function Catalog({ initialCategory, initialSubcategory, onNavigat
   const [categories, setCategories] = useState<{ id: string; name: string }[]>([]);
   const [subcategoriesByCategory, setSubcategoriesByCategory] = useState<Record<string, { id: string; name: string }[]>>({});  const [categorySortOrder, setCategorySortOrder] = useState<Record<string, number>>({});
   const [subcategorySortOrder, setSubcategorySortOrder] = useState<Record<string, Record<string, number>>>({});  const [products, setProducts] = useState<any[]>([]);
+  const [showScrollTop, setShowScrollTop] = useState(false);
+
+  // Lyssna på scroll för att visa/dölja "scroll to top"-knappen
+  useEffect(() => {
+    const handleScroll = () => {
+      // Visa knappen om användaren scrollat ner mer än ca 3 produktrader (ca 800px)
+      setShowScrollTop(window.scrollY > 800);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   useEffect(() => {
     if (initialCategory) {
@@ -93,6 +105,10 @@ export default function Catalog({ initialCategory, initialSubcategory, onNavigat
       if (subA !== subB) return subA - subB;
       return a.id - b.id;
     });
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   return (
     <div>
@@ -210,6 +226,19 @@ export default function Catalog({ initialCategory, initialSubcategory, onNavigat
         </div>
        
       </div>
+
+      {/* Scroll to top button */}
+      <button
+        onClick={scrollToTop}
+        className={`fixed bottom-8 right-8 bg-amber-800 text-white p-4 rounded-full shadow-lg hover:bg-amber-900 transition-all duration-300 z-40 ${
+          showScrollTop 
+            ? 'opacity-100 translate-x-0' 
+            : 'opacity-0 translate-x-20 pointer-events-none'
+        }`}
+        aria-label="Scrolla till toppen"
+      >
+        <ArrowUp size={24} />
+      </button>
     </div>
   );
 }
