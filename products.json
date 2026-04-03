@@ -56,7 +56,7 @@
       "price": "5",
       "image": "obj-dessertglas.jpg",
       "imageBase": "obj-dessertglas",
-      "description": "Höjd: 21 cm. Passar 15 cl.",
+      "description": "Höjd: 21 cm. Rymmer 15 cl.",
       "details": "",
       "available": "60"
     },
@@ -68,7 +68,7 @@
       "price": "5",
       "image": "obj-whiskeyglas.webp",
       "imageBase": "obj-whiskeyglas",
-      "description": "Höjd 8 cm. Passar 6-8 cl.",
+      "description": "Höjd 8 cm. Rymmer 6-8 cl.",
       "details": "",
       "available": "60"
     },
@@ -104,7 +104,7 @@
       "price": "5",
       "image": "obj-avecglas-hotshot.webp",
       "imageBase": "obj-avecglas-hotshot",
-      "description": "Höjd 9 cm. Passar 6 cl.",
+      "description": "Höjd 9 cm. Rymmer 6 cl.",
       "details": "",
       "available": "75"
     },
@@ -116,7 +116,7 @@
       "price": "5",
       "image": "obj-snapsglas-pa-fot.webp",
       "imageBase": "obj-snapsglas-pa-fot",
-      "description": "Höjd 14 cm. Passar 4 cl.",
+      "description": "Höjd 14 cm. Rymmer 4 cl.",
       "details": "",
       "available": "45"
     },
@@ -128,7 +128,7 @@
       "price": "5",
       "image": "obj-thekopp.webp",
       "imageBase": "obj-thekopp",
-      "description": "Höjd 11 cm. Passar 2,5 dl.",
+      "description": "Höjd 11 cm. Rymmer 2,5 dl.",
       "details": "",
       "available": "ca 40 st "
     },
@@ -416,7 +416,7 @@
         "price": "5",
         "image": "obj-stort-rodvin.webp",
         "imageBase": "obj-stort-rodvin",
-        "description": "Stora rödvinsglas. Höjd 20 cm. Passar 3 dl.",
+        "description": "Stora rödvinsglas. Höjd 20 cm. Rymmer 3 dl.",
         "details": "",
         "available": "100"
     },
@@ -529,7 +529,7 @@
     },
     {
         "id": 152,
-        "name": "ljusstake",
+        "name": "Ljusstake",
         "categoryName": "dekor",
         "subcategoryName": "ljusstakar",
         "price": "5",
@@ -537,11 +537,11 @@
         "imageBase": "obj-ljusstake-rund",
         "description": "Ljusstake.",
         "details": "Liten nätt ljusstake för värmeljus.",
-        "available": "30"
+        "available": "62"
      },
      {
       "id": 153,
-      "name": "ljusslinga flaggstång",
+      "name": "Ljusslinga flaggstång",
       "categoryName": "dekor",
       "subcategoryName": "ljusslingor",
       "price": "100",
