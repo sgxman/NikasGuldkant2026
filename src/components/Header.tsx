@@ -19,7 +19,7 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
 
   function isDevBranch() {
     //if current branch is DEV or url is sgxman.github.io/nikas..... = true
-    return process.env.NODE_ENV === 'development' || window.location.hostname === 'sgxman.github.io';
+    return import.meta.env.DEV === true || window.location.hostname === 'sgxman.github.io';
   }
 
   return (
@@ -38,7 +38,7 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
 
           {isDevBranch() && (
             <div className="ml-4 px-4 py-1 bg-yellow-300 text-black font-bold text-xs rounded">
-              UTVECKLINGS VERSION !
+              TEST !
             </div>
           )}
 

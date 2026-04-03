@@ -27,7 +27,7 @@ export default function ProductDetail({ productId, category, subcategory, onNavi
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
         <p className="text-stone-600">Produkten kunde inte hittas</p>
         <button
-          onClick={() => onNavigate('sortiment', category && category !== 'all' ? { category, subcategory } : undefined)}
+          onClick={() => onNavigate('sortiment', { category: category || 'all', subcategory: subcategory || 'all' })}
           className="mt-4 text-amber-800 hover:text-amber-900"
         >
           Tillbaka till sortiment
@@ -40,7 +40,7 @@ export default function ProductDetail({ productId, category, subcategory, onNavi
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
       <button
-        onClick={() => onNavigate('sortiment', category && category !== 'all' ? { category, subcategory } : undefined)}
+        onClick={() => onNavigate('sortiment', { category: category || 'all', subcategory: subcategory || 'all' })}
         className="flex items-center text-stone-600 hover:text-amber-800 transition-colors mb-8"
       >
         <ArrowLeft size={20} className="mr-2" />
