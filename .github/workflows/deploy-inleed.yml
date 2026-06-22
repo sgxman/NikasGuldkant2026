@@ -30,11 +30,12 @@ jobs:
         run: npm run build -- --base=/
 
       - name: Deploy dist to Inleed over SFTP
-        uses: Dylan700/sftp-upload-action@latest
+        uses: wlixcc/SFTP-Deploy-Action@v1.2.6
         with:
           server: ${{ secrets.INLEED_HOST }}
           port: ${{ secrets.INLEED_PORT }}
           username: ${{ secrets.INLEED_USERNAME }}
           password: ${{ secrets.INLEED_PASSWORD }}
-          uploads: |
-            ./dist/ => /home/s143454/domains/nikasguldkant.se/public_html/
+          local_path: './dist/*'
+          remote_path: '/home/s143454/domains/nikasguldkant.se/public_html/'
+          sftp_only: true          
