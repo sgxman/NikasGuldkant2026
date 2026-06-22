@@ -58,7 +58,7 @@ export default function Catalog({ initialCategory, initialSubcategory, onNavigat
     });
   }, [initialCategory]);
 
-  //initially load all products from the products.json on dropbox
+  //initially load all products from the products.json
   useEffect(() => {
     fetch(productsjsonurl)
       .then(response => response.json())
