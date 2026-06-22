@@ -329,7 +329,7 @@
       "name": "Karaff",
       "categoryName": "servering",
       "subcategoryName": "",
-      "price": "5",
+      "price": "15",
       "image": "obj-karaff-randig.webp",
       "imageBase": "obj-karaff-randig",
       "description": "Karaff för vatten eller vin. Höjd 29 cm. Rymmer 1 l.",
@@ -389,12 +389,12 @@
         "name": "Karaff slät",
         "categoryName": "servering",
         "subcategoryName": "",
-        "price": "20",
+        "price": "15",
         "image": "obj-karaff-slat.webp",
         "imageBase": "obj-karaff-slat",
         "description": "Slät vatten eller vinkaraff. Höjd 20 cm. Rymmer 1 l.",
         "details": "",
-        "available": "4"
+        "available": "35"
     },
     {
         "id": 141,
